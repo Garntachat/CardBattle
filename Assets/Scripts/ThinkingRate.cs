@@ -9,6 +9,7 @@ public class ThinkingRate : MonoBehaviour
 	public float slowScale = 0.25f;
 
 	public Slider gaugeSlider;
+	public SlowmoEffect slowMoEffect;
 
 	private float currentGauge;
 	private bool isActive = false;
@@ -34,11 +35,13 @@ public class ThinkingRate : MonoBehaviour
 	void Activate() {
 		isActive = true;
 		Time.timeScale = slowScale;
+		if (slowMoEffect != null) slowMoEffect.OnSlowMoStart();
 	}
 
 	void Deactivate() {
 		isActive = false;
 		Time.timeScale = 1f;
+		if (slowMoEffect != null) slowMoEffect.OnSlowMoEnd();
 	}
 
 	public void OnEnemyEnterRange() {
