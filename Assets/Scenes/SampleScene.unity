@@ -936,6 +936,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1448779994}
   - component: {fileID: 1448779993}
+  - component: {fileID: 1448779996}
   - component: {fileID: 1448779995}
   m_Layer: 0
   m_Name: ThinkingRateManager
@@ -961,7 +962,8 @@ MonoBehaviour:
   rechargeRate: 10
   slowScale: 0.25
   gaugeSlider: {fileID: 508820078}
-  slowMoEffect: {fileID: 1448779995}
+  slowMoEffect: {fileID: 1448779996}
+  slowMoSound: {fileID: 1448779995}
 --- !u!4 &1448779994
 Transform:
   m_ObjectHideFlags: 0
@@ -978,6 +980,21 @@ Transform:
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1448779995
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1448779992}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50f405ba167f59f4cae3f2ca98b6a2c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SlowMoSound
+  whooshClip: {fileID: 8300000, guid: d94ecdc150eff7e41a4df74ae1c110c3, type: 3}
+  tickClip: {fileID: 8300000, guid: dab93487d45263d478be009e3d8e1506, type: 3}
+  whooshReverseClip: {fileID: 8300000, guid: 304b527da45c36d4aa406b690b13d4b5, type: 3}
+--- !u!114 &1448779996
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
