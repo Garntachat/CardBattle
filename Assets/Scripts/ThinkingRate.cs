@@ -31,7 +31,6 @@ public class ThinkingRate : MonoBehaviour
 		if (gaugeSlider != null)
 			gaugeSlider.value = currentGauge;
 
-		Debug.Log("Gauge: " + currentGauge.ToString("F1"));
 	}
 
 	void Activate() {
