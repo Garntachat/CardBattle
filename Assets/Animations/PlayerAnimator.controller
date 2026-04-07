@@ -224,13 +224,13 @@ AnimatorController:
     m_Type: 9
     m_DefaultFloat: 0
     m_DefaultInt: 0
-    m_DefaultBool: 1
+    m_DefaultBool: 0
     m_Controller: {fileID: 9100000}
   - m_Name: DoBlock
     m_Type: 9
     m_DefaultFloat: 0
     m_DefaultInt: 0
-    m_DefaultBool: 0
+    m_DefaultBool: 1
     m_Controller: {fileID: 9100000}
   - m_Name: DoDodge
     m_Type: 9
@@ -272,7 +272,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 3374748389425109202, guid: 4608ed72f88b341468bfa529bedaf9cd, type: 3}
+  m_Motion: {fileID: 7400000, guid: 68189d5e9ee822d41b616249da17fe45, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 

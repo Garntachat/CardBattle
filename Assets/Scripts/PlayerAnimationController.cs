@@ -3,6 +3,7 @@ using UnityEngine;
 public class PlayerAnimationController : MonoBehaviour
 {
 	public ParticleSystem punchEffect;
+	public ParticleSystem guardEffect;
 
     private Animator animator;
 
@@ -16,6 +17,9 @@ public class PlayerAnimationController : MonoBehaviour
 		if (Input.GetKeyDown(KeyCode.Space))
 		{
 			PlayAttack();
+		} else if (Input.GetKeyDown(KeyCode.B))
+		{
+			PlayBlock();
 		}
 	}
 
@@ -24,6 +28,13 @@ public class PlayerAnimationController : MonoBehaviour
 		punchEffect.Stop();
 		punchEffect.Clear();
 		punchEffect.Play();
+	}
+
+	public void SpawnGuardEffect()
+	{
+		guardEffect.Stop();
+		guardEffect.Clear();
+		guardEffect.Play();
 	}
 
 	public void TriggerHitStopEvent()
