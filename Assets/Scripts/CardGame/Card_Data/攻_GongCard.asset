@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70d24dcb6774f432ab615d41e6fc97e4, type: 3}
+  m_Name: "\u653B_GongCard"
+  m_EditorClassIdentifier: Assembly-CSharp::CardData
+  chineeseName: "\u653B"
+  pinyin: "G\u014Dng"
+  thaiName: "\u0E2B\u0E21\u0E31\u0E14\u0E15\u0E23\u0E07"
+  englishName: Straight Strike
+  cardType: 0
+  cardEffect: 0
+  damage: 30
+  damageReduction: 0
+  pushesEnemyOutOfRange: 0
+  cardArtwork: {fileID: 0}
+  cardColor: {r: 0.49803922, g: 0.09019608, b: 0.05490196, a: 0}
+  animationTrigger: DoAttack

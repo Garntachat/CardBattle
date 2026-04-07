@@ -16,6 +16,10 @@ public class ThinkingRate : MonoBehaviour
 	private float currentGauge;
 	private bool isActive = false;
 
+	public CardManager cardManager; 
+
+	public CardUIManager cardUIManager;
+
 	void Start() {
 		currentGauge = maxGauge;
 	}
@@ -24,7 +28,8 @@ public class ThinkingRate : MonoBehaviour
 		if (isActive) {
 			currentGauge += rechargeRate * Time.unscaledDeltaTime;
 			if (currentGauge >= maxGauge) {
-				currentGauge = 0f;
+				currentGauge = maxGauge;
+				OnGaugeFull();
 			}
 		}
 
@@ -56,4 +61,17 @@ public class ThinkingRate : MonoBehaviour
 		currentGauge = 0;
 	}
 
+	void OnGaugeFull()
+	{
+		Debug.Log("Gauge Full! Drawing cards...");
+		cardManager.DrawCards();
+		cardUIManager.ShowCards();
+
+	}
+
+	public void OnCardSelected()
+	{
+		currentGauge = 0f;
+		Deactivate();
+	}
 }
