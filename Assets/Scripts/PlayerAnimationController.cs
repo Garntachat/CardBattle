@@ -4,6 +4,8 @@ public class PlayerAnimationController : MonoBehaviour
 {
 	public ParticleSystem punchEffect;
 	public ParticleSystem guardEffect;
+	public ParticleSystem grabEffect;
+	public ParticleSystem slamEffect;
 
     private Animator animator;
 
@@ -20,6 +22,9 @@ public class PlayerAnimationController : MonoBehaviour
 		} else if (Input.GetKeyDown(KeyCode.B))
 		{
 			PlayBlock();
+		} else if (Input.GetKeyDown(KeyCode.T))
+		{
+			PlayDodge();
 		}
 	}
 
@@ -35,6 +40,21 @@ public class PlayerAnimationController : MonoBehaviour
 		guardEffect.Stop();
 		guardEffect.Clear();
 		guardEffect.Play();
+	}
+
+	public void SpawnGrabEffect()
+	{
+		grabEffect.Stop();
+		grabEffect.Clear();
+		grabEffect.Play();
+	}
+
+	public void SpawnSlamEffect()
+	{
+		slamEffect.Stop();
+		slamEffect.Clear();
+		slamEffect.Play();
+		TriggerHitStopEvent();
 	}
 
 	public void TriggerHitStopEvent()
