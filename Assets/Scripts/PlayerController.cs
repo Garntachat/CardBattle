@@ -59,9 +59,9 @@ public class PlayerController : MonoBehaviour
         animator.SetTrigger("DoDodge");
         Debug.Log("Ready to dodge!");
     }
-    public void PlayAttackAnimation()  // เพิ่ม
+    public void PlayAttackAnimation(string triggerName) 
     {
-        animator.SetTrigger("DoAttack");
+        animator.SetTrigger(triggerName);
     }
     // --- ตาย ---
     private void Die()

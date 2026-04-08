@@ -22,5 +22,5 @@ MonoBehaviour:
   damageReduction: 0
   pushesEnemyOutOfRange: 1
   cardArtwork: {fileID: 0}
-  cardColor: {r: 0.27058825, g: 0.14509805, b: 0.34117648, a: 0}
+  cardColor: {r: 0.27058825, g: 0.14509805, b: 0.34117648, a: 1}
   animationTrigger: DoDodge

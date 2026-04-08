@@ -20,18 +20,22 @@ public class ThinkingRate : MonoBehaviour
 
 	public CardUIManager cardUIManager;
 
+	private bool isWaitingForCard = false;
 	void Start() {
-		currentGauge = maxGauge;
+		currentGauge = 0f;
 	}
 
 	void Update() {
-		if (isActive) {
+		if (isActive && !isWaitingForCard) 
+			{ 
 			currentGauge += rechargeRate * Time.unscaledDeltaTime;
-			if (currentGauge >= maxGauge) {
-				currentGauge = maxGauge;
-				OnGaugeFull();
-			}
-		}
+			if (currentGauge >= maxGauge) 
+				{
+					currentGauge = maxGauge;
+					isWaitingForCard = true;  // เพิ่ม
+					OnGaugeFull();
+        		}
+    	}
 
 		if (thinkingBar != null)
 			thinkingBar.value = currentGauge;
@@ -59,6 +63,7 @@ public class ThinkingRate : MonoBehaviour
 	public void OnEnemyExitRange() {
 		Deactivate();
 		currentGauge = 0;
+		isWaitingForCard = false;
 	}
 
 	void OnGaugeFull()
@@ -72,6 +77,7 @@ public class ThinkingRate : MonoBehaviour
 	public void OnCardSelected()
 	{
 		currentGauge = 0f;
+		isWaitingForCard = false;
 		Deactivate();
 	}
 }
