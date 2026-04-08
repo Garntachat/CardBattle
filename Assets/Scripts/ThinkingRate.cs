@@ -8,7 +8,7 @@ public class ThinkingRate : MonoBehaviour
 	public float rechargeRate = 10f;
 	public float slowScale = 0.25f;
 
-	public Slider gaugeSlider;
+	public Slider thinkingBar;
 
 	public SlowmoEffect slowMoEffect;
 	public SlowMoSound slowMoSound;
@@ -16,22 +16,30 @@ public class ThinkingRate : MonoBehaviour
 	private float currentGauge;
 	private bool isActive = false;
 
+	public CardManager cardManager; 
+
+	public CardUIManager cardUIManager;
+
+	private bool isWaitingForCard = false;
 	void Start() {
-		currentGauge = maxGauge;
+		currentGauge = 0f;
 	}
 
 	void Update() {
-		if (isActive) {
+		if (isActive && !isWaitingForCard) 
+			{ 
 			currentGauge += rechargeRate * Time.unscaledDeltaTime;
-			if (currentGauge >= maxGauge) {
-				currentGauge = 0f;
-			}
-		}
+			if (currentGauge >= maxGauge) 
+				{
+					currentGauge = maxGauge;
+					isWaitingForCard = true;  // เพิ่ม
+					OnGaugeFull();
+        		}
+    	}
 
-		if (gaugeSlider != null)
-			gaugeSlider.value = currentGauge;
+		if (thinkingBar != null)
+			thinkingBar.value = currentGauge;
 
-		Debug.Log("Gauge: " + currentGauge.ToString("F1"));
 	}
 
 	void Activate() {
@@ -55,6 +63,21 @@ public class ThinkingRate : MonoBehaviour
 	public void OnEnemyExitRange() {
 		Deactivate();
 		currentGauge = 0;
+		isWaitingForCard = false;
 	}
 
+	void OnGaugeFull()
+	{
+		Debug.Log("Gauge Full! Drawing cards...");
+		cardManager.DrawCards();
+		cardUIManager.ShowCards();
+
+	}
+
+	public void OnCardSelected()
+	{
+		currentGauge = 0f;
+		isWaitingForCard = false;
+		Deactivate();
+	}
 }

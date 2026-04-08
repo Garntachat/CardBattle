@@ -64,6 +64,10 @@ sysinfo.txt
 *.unitypackage.meta
 *.app
 
+# macOS
+.DS_Store
+**/.DS_Store
+
 # Crashlytics generated file
 crashlytics-build.properties
 
@@ -73,5 +77,6 @@ crashlytics-build.properties
 # Temporary auto-generated Android Assets
 /[Aa]ssets/[Ss]treamingAssets/aa.meta
 /[Aa]ssets/[Ss]treamingAssets/aa/*
-"Assets/Scenes/SampleScene.unity" 
-"Assets/Scenes/SampleScene.unity.meta" 
+Assets/Scenes/SampleScene.unity
+Assets/Scenes/SampleScene.unity.meta
+/[Aa]ssets/[Tt]ext[Mm]esh [Pp]ro/
