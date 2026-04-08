@@ -8,7 +8,7 @@ public class ThinkingRate : MonoBehaviour
 	public float rechargeRate = 10f;
 	public float slowScale = 0.25f;
 
-	public Slider gaugeSlider;
+	public Slider thinkingBar;
 
 	public SlowmoEffect slowMoEffect;
 	public SlowMoSound slowMoSound;
@@ -33,8 +33,8 @@ public class ThinkingRate : MonoBehaviour
 			}
 		}
 
-		if (gaugeSlider != null)
-			gaugeSlider.value = currentGauge;
+		if (thinkingBar != null)
+			thinkingBar.value = currentGauge;
 
 	}
 
