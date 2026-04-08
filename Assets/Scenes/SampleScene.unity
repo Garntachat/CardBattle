@@ -11654,6 +11654,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0.012355599
       objectReference: {fileID: 0}
+    - target: {fileID: -9165797768001435688, guid: c08db4422e2820742b8e3b88c2112eed, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 29ca63727ebeee84199d36af1936bd3e, type: 2}
     - target: {fileID: -9127072559893113593, guid: c08db4422e2820742b8e3b88c2112eed, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 50.27732
@@ -12758,6 +12762,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -152.09348
       objectReference: {fileID: 0}
+    - target: {fileID: -1526964690268444965, guid: c08db4422e2820742b8e3b88c2112eed, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: b6faf1148cfe725429c1728337dba21c, type: 2}
     - target: {fileID: -1517600386782066283, guid: c08db4422e2820742b8e3b88c2112eed, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 0.000018568688
@@ -13446,6 +13454,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -0.000010123844
       objectReference: {fileID: 0}
+    - target: {fileID: 5074512353664290214, guid: c08db4422e2820742b8e3b88c2112eed, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: b6faf1148cfe725429c1728337dba21c, type: 2}
     - target: {fileID: 5260412693316565402, guid: c08db4422e2820742b8e3b88c2112eed, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: -0.000011068894
@@ -13782,6 +13794,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -5.166517
       objectReference: {fileID: 0}
+    - target: {fileID: 7205140776170859923, guid: c08db4422e2820742b8e3b88c2112eed, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 29ca63727ebeee84199d36af1936bd3e, type: 2}
     - target: {fileID: 7240538661865748840, guid: c08db4422e2820742b8e3b88c2112eed, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: -22.303068
@@ -13878,6 +13894,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -0.25542638
       objectReference: {fileID: 0}
+    - target: {fileID: 7603786706384944740, guid: c08db4422e2820742b8e3b88c2112eed, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 29ca63727ebeee84199d36af1936bd3e, type: 2}
     - target: {fileID: 7700247196707343877, guid: c08db4422e2820742b8e3b88c2112eed, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 89.9802
@@ -13950,6 +13970,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -9.233836
       objectReference: {fileID: 0}
+    - target: {fileID: 8153101253863224186, guid: c08db4422e2820742b8e3b88c2112eed, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 29ca63727ebeee84199d36af1936bd3e, type: 2}
     - target: {fileID: 8160435289101289500, guid: c08db4422e2820742b8e3b88c2112eed, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: -1.7731805
@@ -13978,6 +14002,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -0.0000015951822
       objectReference: {fileID: 0}
+    - target: {fileID: 8417361359673230750, guid: c08db4422e2820742b8e3b88c2112eed, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: b6faf1148cfe725429c1728337dba21c, type: 2}
     - target: {fileID: 8476774781526831030, guid: c08db4422e2820742b8e3b88c2112eed, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 78.56437
@@ -14222,8 +14250,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerAnimationController
   punchEffect: {fileID: 892457299}
   guardEffect: {fileID: 1298041423}
-  grabEffect: {fileID: 0}
-  slamEffect: {fileID: 0}
+  grabEffect: {fileID: 3065298860269386568, guid: fa406cd46fce0434f919f3cbc89b3fbf, type: 3}
+  slamEffect: {fileID: 4154910044705473549, guid: f9043cddfe5968c40946022332f8e712, type: 3}
   hitStop: {fileID: 1876906042}
 --- !u!95 &1876906040
 Animator:
