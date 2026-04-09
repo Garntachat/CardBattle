@@ -130,6 +130,7 @@ MonoBehaviour:
   speed: 2
   attackRange: 1.5
   attackRate: 2
+  damage: 50
 --- !u!114 &7482399959161463134
 MonoBehaviour:
   m_ObjectHideFlags: 0
