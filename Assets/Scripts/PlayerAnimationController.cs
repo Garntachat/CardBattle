@@ -2,10 +2,15 @@ using UnityEngine;
 
 public class PlayerAnimationController : MonoBehaviour
 {
-	public ParticleSystem punchEffect;
-	public ParticleSystem guardEffect;
-	public ParticleSystem grabEffect;
-	public ParticleSystem slamEffect;
+	[Header("Effects")]
+	public GameObject punchEffect;
+	public GameObject guardEffect;
+	public GameObject grabEffect;
+	public GameObject slamEffect;
+
+	[Header("Spawn Points")]
+    public Transform guardPoint;
+    public Transform grabPoint;
 
     private Animator animator;
 
@@ -30,30 +35,25 @@ public class PlayerAnimationController : MonoBehaviour
 
 	public void SpawnPunchEffect()
 	{
-		punchEffect.Stop();
-		punchEffect.Clear();
-		punchEffect.Play();
+		Instantiate(punchEffect, grabPoint.position, grabPoint.rotation);
 	}
 
 	public void SpawnGuardEffect()
 	{
-		guardEffect.Stop();
-		guardEffect.Clear();
-		guardEffect.Play();
+		Instantiate(guardEffect, guardPoint.position, guardPoint.rotation);
 	}
 
 	public void SpawnGrabEffect()
 	{
-		grabEffect.Stop();
-		grabEffect.Clear();
-		grabEffect.Play();
+		Instantiate(grabEffect, grabPoint.position, grabPoint.rotation);
 	}
 
 	public void SpawnSlamEffect()
 	{
-		slamEffect.Stop();
-		slamEffect.Clear();
-		slamEffect.Play();
+		Vector3 spawnPos = grabPoint.position;
+		spawnPos.y = transform.position.y;
+		Quaternion flatRotation = Quaternion.Euler(-90f, 0f, 0f);
+		Instantiate(slamEffect, spawnPos, flatRotation);
 		TriggerHitStopEvent();
 	}
 
