@@ -78,6 +78,21 @@ public class ThinkingRate : MonoBehaviour
 	{
 		currentGauge = 0f;
 		isWaitingForCard = false;
-		Deactivate();
+
+		if (slowMoEffect != null) slowMoEffect.OnSlowMoEnd();
+		if (slowMoSound != null) slowMoSound.OnSlowMoEnd();
+
+		Invoke("RestartSlowMo", 1.0f); // to strat slow moton again
+
+		
 	}
+
+	void RestartSlowMo()
+    {
+        // Only turn slow-mo back on if the enemy is STILL in the circle
+        if (isActive == true) 
+        {
+            Activate();
+        }
+    }
 }

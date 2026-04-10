@@ -36,4 +36,5 @@ public class CardData : ScriptableObject
     public Sprite cardArtwork;
     public Color cardColor;
     public string animationTrigger;
+    public string description;
 }
