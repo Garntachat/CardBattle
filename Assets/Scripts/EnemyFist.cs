@@ -42,6 +42,7 @@ public class EnemyFist : MonoBehaviour
                 nextAttackTime = Time.time + attackRate;
             }
         }
+        Debug.Log("TimeScale: " + Time.timeScale);
     }
 
     void Attack() 

@@ -28,7 +28,7 @@ public class ThinkingRate : MonoBehaviour
 	void Update() {
 		if (isActive && !isWaitingForCard) 
 			{ 
-			currentGauge += rechargeRate * Time.deltaTime;
+			currentGauge += rechargeRate * Time.unscaledDeltaTime;
 			if (currentGauge >= maxGauge) 
 				{
 					currentGauge = maxGauge;

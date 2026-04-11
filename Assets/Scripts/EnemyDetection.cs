@@ -12,18 +12,37 @@ public class EnemyDetection : MonoBehaviour
 	}
 
 	void Update() {
-		if (enemy == null) return;
+    	Debug.Log("TimeScale: " + Time.timeScale + " EnemyInRange: " + enemyInRange);
 
-		float distance = Vector3.Distance(transform.position, enemy.position);
-		bool inRange = distance <= detectionRadius;
+		GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
+        float closestDist = Mathf.Infinity;
+        GameObject closest = null;
 
-		if (inRange && !enemyInRange) {
-			enemyInRange = true;
-			thinkingRate.OnEnemyEnterRange();
-		} else if (!inRange && enemyInRange) {
-			enemyInRange = false;
-			thinkingRate.OnEnemyExitRange();
-		}
+        foreach (GameObject e in enemies)
+        {
+            float dist = Vector3.Distance(transform.position, e.transform.position);
+            if (dist < closestDist)
+            {
+                closestDist = dist;
+                closest = e;
+            }
+        }
+
+        if (closest != null)
+            enemy = closest.transform;
+
+        bool inRange = closestDist <= detectionRadius;
+
+        if (inRange && !enemyInRange)
+        {
+            enemyInRange = true;
+            thinkingRate.OnEnemyEnterRange();
+        }
+        else if (!inRange && enemyInRange)
+        {
+            enemyInRange = false;
+            thinkingRate.OnEnemyExitRange();
+        }
 	}
 
 	void OnDrawGizmos() {

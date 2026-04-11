@@ -33,7 +33,8 @@ public class CardResolver : MonoBehaviour
                 enemyHealth.TakeDamage(card.damage);
                 // push enemy away
                 Vector3 pushDir = (enemyObj.transform.position - playerController.transform.position).normalized;
-                enemyObj.transform.position += pushDir * 5f;
+                enemyObj.transform.position += pushDir * 10f;
+                FindObjectOfType<ThinkingRate>().OnEnemyExitRange();
                 Debug.Log("摔 Throw! Enemy pushed out of range");
                 break;
 
