@@ -4,13 +4,18 @@ using System.Collections;
 public class CameraShake : MonoBehaviour
 {
     public float shakeDuration = 0.15f;
-	public float shakeMagnitude = 0.05f;
 
 	private Vector3 originalPos;
 
-	public void TriggerShake()
+	void Start()
 	{
-		StartCoroutine(Shake(shakeDuration, shakeMagnitude));
+		originalPos = transform.localPosition;
+	}
+	public void TriggerShake(float magnitude)
+	{
+		StopAllCoroutines();
+		transform.localPosition = originalPos;
+		StartCoroutine(Shake(shakeDuration, magnitude));
 	}
 
 	public void TriggerCustomShake(float duration, float magnitude) {
@@ -22,7 +27,7 @@ public class CameraShake : MonoBehaviour
 		Vector3 originalPos = transform.localPosition;
 		float elapsed = 0f;
 
-		while (elapsed < shakeDuration)
+		while (elapsed < duration)
 		{
 			float damping = 1.0f - (elapsed/duration);
 

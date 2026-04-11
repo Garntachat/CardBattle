@@ -731,7 +731,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CameraShake
   shakeDuration: 0.15
-  shakeMagnitude: 0.05
 --- !u!1 &345677437
 GameObject:
   m_ObjectHideFlags: 0
@@ -12263,6 +12262,8 @@ MonoBehaviour:
   vignetteIntensityOff: 0.2
   transitionSpeedOn: 3
   fadeOutDuration: 0.8
+  damageColor: {r: 1, g: 0, b: 0, a: 1}
+  damageDuration: 0.3
 --- !u!1 &1489011071
 GameObject:
   m_ObjectHideFlags: 0
@@ -15414,10 +15415,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e04cd138b1b51c40a80cb8e978d0ebd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerAnimationController
-  punchEffect: {fileID: 892457299}
-  guardEffect: {fileID: 1298041423}
-  grabEffect: {fileID: 3065298860269386568, guid: fa406cd46fce0434f919f3cbc89b3fbf, type: 3}
-  slamEffect: {fileID: 4154910044705473549, guid: f9043cddfe5968c40946022332f8e712, type: 3}
+  punchEffect: {fileID: 4137794148955725907, guid: 2b8e3a3a12831414d95c165258902cf1, type: 3}
+  guardEffect: {fileID: 97270780095400465, guid: c823c802c845e5747822f3097e0d67b5, type: 3}
+  grabEffect: {fileID: 6397808546987002688, guid: fa406cd46fce0434f919f3cbc89b3fbf, type: 3}
+  slamEffect: {fileID: 250153700159819812, guid: f9043cddfe5968c40946022332f8e712, type: 3}
   guardPoint: {fileID: 1876906046}
   grabPoint: {fileID: 1876906046}
   hitStop: {fileID: 1876906042}
@@ -15469,7 +15470,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36d3ea344fa0988429d2cf89a5375ddf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyDetection
-  detectionRadius: 5
+  detectionRadius: 3
   enemy: {fileID: 0}
   thinkingRate: {fileID: 1448779993}
 --- !u!114 &1876906045
@@ -15486,6 +15487,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerController
   maxHP: 100
   currentHP: 0
+  slowMoEffect: {fileID: 1448779996}
+  hitStop: {fileID: 1876906042}
 --- !u!4 &1876906046 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: c08db4422e2820742b8e3b88c2112eed, type: 3}

@@ -54,12 +54,12 @@ public class PlayerAnimationController : MonoBehaviour
 		spawnPos.y = transform.position.y;
 		Quaternion flatRotation = Quaternion.Euler(-90f, 0f, 0f);
 		Instantiate(slamEffect, spawnPos, flatRotation);
-		TriggerHitStopEvent();
+		TriggerHitStopEvent(0.1f);
 	}
 
-	public void TriggerHitStopEvent()
+	public void TriggerHitStopEvent(float magnitude)
 	{
-		hitStop.TriggerHitStop();
+		hitStop.TriggerHitStop(magnitude);
 	}
 
 	public void PlayAttack() {

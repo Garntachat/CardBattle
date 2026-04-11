@@ -12,6 +12,10 @@ public class PlayerController : MonoBehaviour
     private bool isDodging = false;       // 避 เซ็ตค่านี้
     private Animator animator;
 
+    [Header("Effects")]
+    public SlowmoEffect slowMoEffect;
+    public HitStop hitStop;
+
     void Start()
     {
         currentHP = maxHP;
@@ -42,6 +46,10 @@ public class PlayerController : MonoBehaviour
         {
             Die();
         }
+
+        // Damge Taken
+        slowMoEffect.OnPlayerHit();
+        hitStop.TriggerHitStop(0.05f);
     }
 
     // --- 守 Guard ---
