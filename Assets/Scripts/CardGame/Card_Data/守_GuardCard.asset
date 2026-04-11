@@ -21,7 +21,7 @@ MonoBehaviour:
   damage: 0
   damageReduction: 0.5
   pushesEnemyOutOfRange: 0
-  cardArtwork: {fileID: 0}
+  cardArtwork: {fileID: 21300000, guid: 4314f87d211144a5184f645a8ef9b979, type: 3}
   cardColor: {r: 0.13725491, g: 0.30980393, b: 0.32941177, a: 1}
   animationTrigger: DoBlock
   description: Brace with wide stance. Reduce incoming damage by 50%.
