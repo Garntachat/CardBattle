@@ -18,6 +18,7 @@ public class EnemyFist : MonoBehaviour
         
         // หา Animator ที่อยู่ที่ตัวลูก (ร่างคน)
         anim = GetComponentInChildren<Animator>();
+        Debug.Log("Animator found: " + (anim != null));
     }
 
     void Update() 
