@@ -6,6 +6,7 @@ public class EnemySelector : MonoBehaviour
     
     void Start()
     {
+        enemyDetection.manuallySelected = true;
         SelectEnemyInFront();
     }
     void Update()

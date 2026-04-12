@@ -81,6 +81,7 @@ public class ThinkingRate : MonoBehaviour
 		isWaitingForCard = false;
 
 		Time.timeScale = 1f;
+		Time.timeScale = 1f;
 		if (slowMoEffect != null) slowMoEffect.OnSlowMoEnd();
 		if (slowMoSound != null) slowMoSound.OnSlowMoEnd();
 
