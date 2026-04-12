@@ -4,6 +4,7 @@ public class EnemySelector : MonoBehaviour
 {
     public EnemyDetection enemyDetection;
     
+    private float currentAngle = 0f;
     void Start()
     {
         enemyDetection.manuallySelected = true;
@@ -13,10 +14,19 @@ public class EnemySelector : MonoBehaviour
     {   
         if (enemyDetection.enemy == null)
             SelectEnemyInFront();
-        if (Input.GetKeyDown(KeyCode.W)) { enemyDetection.manuallySelected = true; SnapRotation(0f); }
-        else if (Input.GetKeyDown(KeyCode.D)) { enemyDetection.manuallySelected = true; SnapRotation(90f); }
-        else if (Input.GetKeyDown(KeyCode.S)) { enemyDetection.manuallySelected = true; SnapRotation(180f); }
-        else if (Input.GetKeyDown(KeyCode.A)) { enemyDetection.manuallySelected = true; SnapRotation(270f); }
+
+        if (Input.GetKeyDown(KeyCode.E)) 
+        { 
+            enemyDetection.manuallySelected = true; 
+            currentAngle += 90f;
+            SnapRotation(currentAngle);
+        }
+        else if (Input.GetKeyDown(KeyCode.Q)) 
+        { 
+            enemyDetection.manuallySelected = true; 
+            currentAngle -= 90f;
+            SnapRotation(currentAngle);
+        }
     }
 
     void SnapRotation(float yAngle)
