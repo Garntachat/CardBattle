@@ -1,5 +1,5 @@
 using UnityEngine;
-
+using System.Collections;
 public class EnemyHealth : MonoBehaviour
 {
     public float maxHealth = 100f;
@@ -11,7 +11,7 @@ public class EnemyHealth : MonoBehaviour
         currentHealth = maxHealth;
     }
 
-    public void TakeDamage(float damage)
+    public void TakeDamage(float damage, string deathAnimation = "DoDie")
     {   
         if (isDead) return;
         currentHealth -= damage;
@@ -19,27 +19,55 @@ public class EnemyHealth : MonoBehaviour
 
         if (currentHealth <= 0)
         {
-            Die();
+            isDead = true;
+            Die(deathAnimation);
         }
     }
-
+    
     void Die(string deathAnimation = "DoDie")
+{
+    isDead = true;
+    Debug.Log(gameObject.name + " ตายแล้ว animation: " + deathAnimation);
+
+    EnemyFist fist = GetComponent<EnemyFist>();
+    if (fist != null) fist.enabled = false;
+    EnemyKnife knife = GetComponent<EnemyKnife>();
+    if (knife != null) knife.enabled = false;
+
+    Rigidbody rb = GetComponent<Rigidbody>();
+    if (rb != null) rb.linearVelocity = Vector3.zero;
+
+    Animator anim = GetComponentInChildren<Animator>();
+    if (anim != null)
     {
-        Debug.Log(gameObject.name + " ตายแล้ว");
+        anim.SetFloat("Speed", 0f);  // หยุด run animation ก่อน
+        anim.SetTrigger(deathAnimation);
+    }
 
-        // หยุด movement ทันที
-        EnemyFist fist = GetComponent<EnemyFist>();
-        if (fist != null) fist.enabled = false;
-        EnemyKnife knife = GetComponent<EnemyKnife>();
-        if (knife != null) knife.enabled = false;
+    StartCoroutine(DestroyAfterDelay(2f));
+}
+    // void Die(string deathAnimation = "DoDie")
+    // {
+    //     isDead = true;
+    //     Debug.Log(gameObject.name + " ตายแล้ว animation: " + deathAnimation);
 
-        // หยุด rigidbody ถ้ามี
-        Rigidbody rb = GetComponent<Rigidbody>();
-        if (rb != null) rb.linearVelocity = Vector3.zero;
+    //     EnemyFist fist = GetComponent<EnemyFist>();
+    //     if (fist != null) fist.enabled = false;
+    //     EnemyKnife knife = GetComponent<EnemyKnife>();
+    //     if (knife != null) knife.enabled = false;
 
-        Animator anim = GetComponentInChildren<Animator>();
-        if (anim != null) anim.SetTrigger(deathAnimation);
+    //     Rigidbody rb = GetComponent<Rigidbody>();
+    //     if (rb != null) rb.linearVelocity = Vector3.zero;
 
-        Destroy(gameObject, 2f);
+    //     Animator anim = GetComponentInChildren<Animator>();
+    //     if (anim != null) anim.SetTrigger(deathAnimation);
+
+    //     StartCoroutine(DestroyAfterDelay(2f));
+    // }
+    
+    IEnumerator DestroyAfterDelay(float seconds)
+    {
+        yield return new WaitForSecondsRealtime(seconds); 
+        Destroy(gameObject);
     }
 }

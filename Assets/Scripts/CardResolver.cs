@@ -31,13 +31,12 @@ public class CardResolver : MonoBehaviour
         switch (card.cardEffect)
         {
             case CardEffect.StraightStrike:
-                enemyHealth.TakeDamage(card.damage);
+                enemyHealth.TakeDamage(card.damage, "DoPunched");
                 Debug.Log($"攻 Straight Strike! Deal {card.damage} damage");
                 break;
 
             case CardEffect.Throw:
-                enemyHealth.TakeDamage(card.damage);
-                // push enemy away
+                enemyHealth.TakeDamage(card.damage, "DoThrown");
                 Vector3 pushDir = (enemyObj.transform.position - playerController.transform.position).normalized;
                 enemyObj.transform.position += pushDir * 10f;
                 FindObjectOfType<ThinkingRate>().OnEnemyExitRange();

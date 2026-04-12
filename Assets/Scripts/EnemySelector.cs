@@ -34,7 +34,7 @@ public class EnemySelector : MonoBehaviour
         transform.rotation = Quaternion.Euler(0f, yAngle, 0f);
         SelectEnemyInFront();
     }
-
+    
     void SelectEnemyInFront()
     {
         GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
