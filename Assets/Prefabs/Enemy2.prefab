@@ -147,6 +147,8 @@ MonoBehaviour:
   maxHealth: 100
   isBoss: 0
   isDead: 0
+  normalMaterial: {fileID: 2100000, guid: bed5c05aa7bf1bf4f8f37c488333ddcb, type: 2}
+  damageMaterial: {fileID: 2100000, guid: 4f788bdfaded6d54eacdc5c2726b87d7, type: 2}
 --- !u!1 &6425191143988873484
 GameObject:
   m_ObjectHideFlags: 0

@@ -8,6 +8,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -9165797768001435688, guid: a933407860b849240888191631440de1, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 4991a5f32e360ec45b58ae74b3d89a35, type: 2}
     - target: {fileID: -8679921383154817045, guid: a933407860b849240888191631440de1, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -48,6 +52,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -1526964690268444965, guid: a933407860b849240888191631440de1, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 4991a5f32e360ec45b58ae74b3d89a35, type: 2}
     - target: {fileID: 919132149155446097, guid: a933407860b849240888191631440de1, type: 3}
       propertyPath: m_Name
       value: Enemy1
@@ -56,6 +64,22 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Enemy
       objectReference: {fileID: 0}
+    - target: {fileID: 7205140776170859923, guid: a933407860b849240888191631440de1, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 70ff51683a48efb4fb9a1a64f78eeb84, type: 2}
+    - target: {fileID: 7603786706384944740, guid: a933407860b849240888191631440de1, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 4991a5f32e360ec45b58ae74b3d89a35, type: 2}
+    - target: {fileID: 8153101253863224186, guid: a933407860b849240888191631440de1, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 4991a5f32e360ec45b58ae74b3d89a35, type: 2}
+    - target: {fileID: 8417361359673230750, guid: a933407860b849240888191631440de1, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 4991a5f32e360ec45b58ae74b3d89a35, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -107,6 +131,8 @@ MonoBehaviour:
   maxHealth: 100
   isBoss: 0
   isDead: 0
+  normalMaterial: {fileID: 2100000, guid: 4991a5f32e360ec45b58ae74b3d89a35, type: 2}
+  damageMaterial: {fileID: 2100000, guid: 4f788bdfaded6d54eacdc5c2726b87d7, type: 2}
 --- !u!95 &7185922908401241340
 Animator:
   serializedVersion: 7
