@@ -15,6 +15,12 @@ public class CardResolver : MonoBehaviour
         }
         GameObject enemyObj = enemyDetection.enemy.gameObject;
         EnemyHealth enemyHealth = enemyObj.GetComponent<EnemyHealth>();
+        if (!enemyObj.activeInHierarchy) return;
+        
+        if (enemyHealth == null)
+            enemyHealth = enemyObj.GetComponentInParent<EnemyHealth>();
+        if (enemyHealth == null)
+            enemyHealth = enemyObj.GetComponentInChildren<EnemyHealth>();
 
         if (enemyHealth == null)
         {
