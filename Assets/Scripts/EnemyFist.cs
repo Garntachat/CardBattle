@@ -48,7 +48,10 @@ public class EnemyFist : MonoBehaviour
     {
         // สั่งให้เล่นแอนิเมชันต่อย (Trigger DoAttack)
         if (anim != null) anim.SetTrigger("DoAttack");
+    }
 
+    public void DealDamage()
+    {
         if (target != null)
         {
             PlayerController pc = target.GetComponent<PlayerController>();
