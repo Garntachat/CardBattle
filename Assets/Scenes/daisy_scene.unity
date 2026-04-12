@@ -15532,12 +15532,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e04cd138b1b51c40a80cb8e978d0ebd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerAnimationController
-  punchEffect: {fileID: 892457299}
-  guardEffect: {fileID: 1298041423}
-  grabEffect: {fileID: 3065298860269386568, guid: fa406cd46fce0434f919f3cbc89b3fbf, type: 3}
-  slamEffect: {fileID: 4154910044705473549, guid: f9043cddfe5968c40946022332f8e712, type: 3}
+  punchEffect: {fileID: 4137794148955725907, guid: 2b8e3a3a12831414d95c165258902cf1, type: 3}
+  guardEffect: {fileID: 97270780095400465, guid: c823c802c845e5747822f3097e0d67b5, type: 3}
+  grabEffect: {fileID: 6397808546987002688, guid: fa406cd46fce0434f919f3cbc89b3fbf, type: 3}
+  slamEffect: {fileID: 250153700159819812, guid: f9043cddfe5968c40946022332f8e712, type: 3}
   guardPoint: {fileID: 1876906046}
   grabPoint: {fileID: 1876906046}
+  audioSource: {fileID: 0}
+  punchSound: {fileID: 8300000, guid: c40b7e16f26b7c34f8581b588967026a, type: 3}
+  slamSound: {fileID: 8300000, guid: 0cad1fcf08a637140a8c90265ec2dcb2, type: 3}
   hitStop: {fileID: 1876906042}
 --- !u!95 &1876906040
 Animator:

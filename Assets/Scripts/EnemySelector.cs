@@ -11,6 +11,8 @@ public class EnemySelector : MonoBehaviour
     }
     void Update()
     {   
+        if (enemyDetection.enemy == null)
+            SelectEnemyInFront();
         if (Input.GetKeyDown(KeyCode.W)) { enemyDetection.manuallySelected = true; SnapRotation(0f); }
         else if (Input.GetKeyDown(KeyCode.D)) { enemyDetection.manuallySelected = true; SnapRotation(90f); }
         else if (Input.GetKeyDown(KeyCode.S)) { enemyDetection.manuallySelected = true; SnapRotation(180f); }
@@ -35,7 +37,7 @@ public class EnemySelector : MonoBehaviour
             float angle = Vector3.Angle(transform.forward, toEnemy);
             float dist = Vector3.Distance(transform.position, e.transform.position);
 
-            if (angle < 45f && dist < bestDist)
+            if (angle < 90f && dist < bestDist)
             {
                 bestDist = dist;
                 best = e;
