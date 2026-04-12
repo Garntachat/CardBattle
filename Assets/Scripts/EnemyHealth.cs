@@ -25,49 +25,28 @@ public class EnemyHealth : MonoBehaviour
     }
     
     void Die(string deathAnimation = "DoDie")
-{
-    isDead = true;
-    Debug.Log(gameObject.name + " ตายแล้ว animation: " + deathAnimation);
-
-    EnemyFist fist = GetComponent<EnemyFist>();
-    if (fist != null) fist.enabled = false;
-    EnemyKnife knife = GetComponent<EnemyKnife>();
-    if (knife != null) knife.enabled = false;
-
-    Rigidbody rb = GetComponent<Rigidbody>();
-    if (rb != null) rb.linearVelocity = Vector3.zero;
-
-    Animator anim = GetComponentInChildren<Animator>();
-    if (anim != null)
     {
-        anim.SetFloat("Speed", 0f);  // หยุด run animation ก่อน
-        anim.SetTrigger(deathAnimation);
+        isDead = true;
+        
+        EnemyFist fist = GetComponent<EnemyFist>();
+        if (fist != null) fist.enabled = false;
+        EnemyKnife knife = GetComponent<EnemyKnife>();
+        if (knife != null) knife.enabled = false;
+
+        Rigidbody rb = GetComponent<Rigidbody>();
+        if (rb != null) rb.linearVelocity = Vector3.zero;
+
+        Animator anim = GetComponentInChildren<Animator>();
+        if (anim != null) anim.SetFloat("Speed", 0f);
+
+        StartCoroutine(PlayDeathAnimation(anim, deathAnimation));
     }
 
-    StartCoroutine(DestroyAfterDelay(2f));
-}
-    // void Die(string deathAnimation = "DoDie")
-    // {
-    //     isDead = true;
-    //     Debug.Log(gameObject.name + " ตายแล้ว animation: " + deathAnimation);
-
-    //     EnemyFist fist = GetComponent<EnemyFist>();
-    //     if (fist != null) fist.enabled = false;
-    //     EnemyKnife knife = GetComponent<EnemyKnife>();
-    //     if (knife != null) knife.enabled = false;
-
-    //     Rigidbody rb = GetComponent<Rigidbody>();
-    //     if (rb != null) rb.linearVelocity = Vector3.zero;
-
-    //     Animator anim = GetComponentInChildren<Animator>();
-    //     if (anim != null) anim.SetTrigger(deathAnimation);
-
-    //     StartCoroutine(DestroyAfterDelay(2f));
-    // }
-    
-    IEnumerator DestroyAfterDelay(float seconds)
+    IEnumerator PlayDeathAnimation(Animator anim, string deathAnimation)
     {
-        yield return new WaitForSecondsRealtime(seconds); 
+        yield return new WaitForSecondsRealtime(0.5f);  // delay ก่อน animate — ปรับได้
+        if (anim != null) anim.SetTrigger(deathAnimation);
+        yield return new WaitForSecondsRealtime(2f);
         Destroy(gameObject);
     }
 }

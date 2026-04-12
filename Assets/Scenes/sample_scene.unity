@@ -15662,7 +15662,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36d3ea344fa0988429d2cf89a5375ddf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyDetection
-  detectionRadius: 5
+  detectionRadius: 3
   enemy: {fileID: 0}
   thinkingRate: {fileID: 1448779993}
   enemyInRange: 0
