@@ -6,14 +6,16 @@ public class EnemyDetection : MonoBehaviour
 	public Transform enemy;
 
 	public ThinkingRate thinkingRate;
-	private bool enemyInRange = false;
+	public bool enemyInRange = false;
 
+	public bool manuallySelected = false;
+	public enum Lane {Left, Front, Right, Back}
+	public Lane currentTargetLane = Lane.Front;
 	void Start() {
 	}
 
-	void Update() {
-    	Debug.Log("TimeScale: " + Time.timeScale + " EnemyInRange: " + enemyInRange);
-
+	void Update() 
+	{
 		GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
         float closestDist = Mathf.Infinity;
         GameObject closest = null;
@@ -27,9 +29,11 @@ public class EnemyDetection : MonoBehaviour
                 closest = e;
             }
         }
-
-        if (closest != null)
-            enemy = closest.transform;
+		if (!manuallySelected || enemy == null)
+		{
+			if (closest != null)
+				enemy = closest.transform;
+		}
 
         bool inRange = closestDist <= detectionRadius;
 

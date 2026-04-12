@@ -64,7 +64,10 @@ public class WaveSpawner : MonoBehaviour
     {
         if (prefab == null) return;
         int index = spawnPointIndex % spawnPoints.Length;
-        Instantiate(prefab, spawnPoints[index].position, Quaternion.identity);
+        Vector3 spawnPos = spawnPoints[index].position;
+        spawnPos.y = 1.0f;
+        GameObject enemy = Instantiate(prefab, spawnPos, Quaternion.identity);
+        enemy.transform.localScale = new Vector3(1f, 1f, 1f);
     }
 
     bool AllEnemiesDead()
