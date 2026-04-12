@@ -25,6 +25,8 @@ public class EnemyHealth : MonoBehaviour
     void Die()
     {
         Debug.Log(gameObject.name + " ตายแล้ว");
-        Destroy(gameObject); 
+        Animator anim = GetComponentInChildren<Animator>();
+        if (anim != null) anim.SetTrigger("DoPunched");
+        Destroy(gameObject, 2f); 
     }
 }
