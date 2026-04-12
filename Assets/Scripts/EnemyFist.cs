@@ -23,6 +23,8 @@ public class EnemyFist : MonoBehaviour
 
     void Update() 
     {
+        EnemyHealth health = GetComponent<EnemyHealth>();
+        if (health != null && health.isDead) return; 
         if (target == null) return;
         float distance = Vector3.Distance(transform.position, target.position);
 

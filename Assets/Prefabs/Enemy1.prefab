@@ -130,7 +130,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EnemyKnife
   target: {fileID: 0}
   speed: 1
-  attackRange: 2.5
+  attackRange: 1.5
   attackRate: 2
   damage: 20
 --- !u!114 &-173056146510179084
