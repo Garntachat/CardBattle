@@ -12,6 +12,13 @@ public class PlayerAnimationController : MonoBehaviour
     public Transform guardPoint;
     public Transform grabPoint;
 
+	[Header("Sound")]
+	public AudioSource audioSource;
+	public AudioClip punchSound;
+	// public AudioClip blockSound;
+	// public AudioClip grabSound;
+	public AudioClip slamSound;
+
     private Animator animator;
 
 	public HitStop hitStop;
@@ -72,5 +79,15 @@ public class PlayerAnimationController : MonoBehaviour
 
 	public void PlayDodge() {
 		animator.SetTrigger("DoDodge");
+	}
+
+	public void PlayPunchSound()
+	{
+		audioSource.PlayOneShot(punchSound);
+	}
+
+	public void PlaySlamSound()
+	{
+		audioSource.PlayOneShot(slamSound);
 	}
 }
