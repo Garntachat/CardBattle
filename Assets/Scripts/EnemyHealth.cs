@@ -40,8 +40,8 @@ public class EnemyHealth : MonoBehaviour
                     EnemyKnife knife = GetComponent<EnemyKnife>();
                     if (knife != null) knife.Knockdown(1f);
 
-                    Boss boss = GetComponent<Boss>();
-                    if (boss != null) boss.Knockdown(1f); 
+                    BossNew bossNew = GetComponent<BossNew>();
+                    if (bossNew != null) bossNew.Knockdown(1f); 
                 }
             }
         }

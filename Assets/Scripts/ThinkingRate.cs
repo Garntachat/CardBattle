@@ -63,8 +63,8 @@ public class ThinkingRate : MonoBehaviour
 
 	public void OnEnemyExitRange() {
 		Deactivate();
-		currentGauge = 0;
-		isWaitingForCard = false;
+		// currentGauge = 0;
+		// isWaitingForCard = false;
 	}
 
 	void OnGaugeFull()
