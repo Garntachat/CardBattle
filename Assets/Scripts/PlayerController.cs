@@ -1,5 +1,6 @@
 // PlayerController.cs
 using UnityEngine;
+using TMPro;
 
 public class PlayerController : MonoBehaviour
 {
@@ -16,10 +17,19 @@ public class PlayerController : MonoBehaviour
     public SlowmoEffect slowMoEffect;
     public HitStop hitStop;
 
+    public GameObject DeadEffect;
+
+    public Material deadMaterial;
+    private Renderer[] rends;
+    [Header("UI")]
+    public TMP_Text result;
+    public TMP_Text GameOver;
+
     void Start()
     {
         currentHP = maxHP;
         animator = GetComponent<Animator>();
+        rends = GetComponentsInChildren<Renderer>();
     }
 
     // --- damage ---
@@ -38,7 +48,8 @@ public class PlayerController : MonoBehaviour
         currentHP -= finalDamage;
 
         Debug.Log($"Player took {finalDamage} damage! HP: {currentHP}/{maxHP}");
-
+        UITakeDamage();
+        
         // reset reduction after being hit
         damageReduction = 0f;
 
@@ -75,6 +86,22 @@ public class PlayerController : MonoBehaviour
     private void Die()
     {
         Debug.Log("Player died!");
+        GameOver.gameObject.SetActive(true);
+        Instantiate(DeadEffect, transform.position, Quaternion.identity);
+        if (rends != null && deadMaterial != null)
+        {
+        // change all materials
+        foreach (Renderer r in rends)
+        {
+            r.material = deadMaterial;
+        }
+        }
+
         // บอกทีมให้ trigger game over ตรงนี้
+    }
+
+    private void UITakeDamage()
+    {
+        result.text = $"HP: {currentHP}/{maxHP}";
     }
 }
