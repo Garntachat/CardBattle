@@ -2,7 +2,7 @@ using UnityEngine;
 using System.Collections;
 using TMPro;
 
-public class WaveSpawner : MonoBehaviour
+public class infiniteSpawner : MonoBehaviour
 {
     [Header("Enemy Prefabs")]
     public GameObject enemyMeleePrefab; 
@@ -12,8 +12,10 @@ public class WaveSpawner : MonoBehaviour
     [Header("Spawn Points")]
     public Transform[] spawnPoints; 
 
+    public float spawnRate = 0.6f;
     [Header("UI")]
-    public TMP_Text waveText;
+    public TMP_Text waveText; 
+
     void Start()
     {
         if (enemyMeleePrefab == null || enemyWeaponPrefab == null || bossPrefab == null || spawnPoints.Length == 0)
@@ -22,43 +24,26 @@ public class WaveSpawner : MonoBehaviour
             return;
         }
 
-        StartCoroutine(StartLevel1());
+        StartCoroutine(StartLevel());
     }
 
-    IEnumerator StartLevel1()
-    {   
-        waveText.text = "Phase 1: Start!";
-        for (int i = 0; i < 4; i++)
-        {
-            SpawnEnemy(enemyWeaponPrefab, i);
-            yield return new WaitForSeconds(2.0f);
-        }
+    IEnumerator StartLevel()
+    {
+        int wave = 1;
         
-        yield return new WaitUntil(() => AllEnemiesDead());
-        waveText.text = "Phase 1 Clear!";
-        yield return new WaitForSeconds(2.0f); 
-
-        waveText.text = "Phase 2: Start!";
-        for (int i = 0; i < 8; i++)
-        {
+        while (true)
+        {   
+            waveText.text = "wave: "+ wave.ToString();
+            for (int i = 0; i < wave*2; i++)
+            {
             GameObject selected = (i % 2 == 0) ? enemyMeleePrefab : enemyWeaponPrefab;
             SpawnEnemy(selected, Random.Range(0, spawnPoints.Length));
-            yield return new WaitForSeconds(1.2f);
+            yield return new WaitForSeconds(spawnRate);
+            }
+            yield return new WaitUntil(() => AllEnemiesDead());
+            wave +=1;
+            
         }
-
-        yield return new WaitUntil(() => AllEnemiesDead());
-        waveText.text = "Phase 2 Clear!";
-        yield return new WaitForSeconds(2.0f);
-        waveText.text = "Phase 3: BOSS APPEARS!";
-        SpawnEnemy(bossPrefab, 0); 
-        
-        for (int i = 0; i < 4; i++)
-        {
-            SpawnEnemy(enemyMeleePrefab, i);
-        }
-
-        yield return new WaitUntil(() => AllEnemiesDead());
-        waveText.text = "Level 1 Completed! BOSS DEFEATED!";
     }
 
     void SpawnEnemy(GameObject prefab, int spawnPointIndex)
