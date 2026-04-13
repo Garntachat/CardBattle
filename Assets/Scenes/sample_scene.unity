@@ -16521,6 +16521,10 @@ MonoBehaviour:
   audioSource: {fileID: 1876906047}
   punchSound: {fileID: 8300000, guid: c40b7e16f26b7c34f8581b588967026a, type: 3}
   slamSound: {fileID: 8300000, guid: 0cad1fcf08a637140a8c90265ec2dcb2, type: 3}
+  straightPunchVoice: {fileID: 8300000, guid: 883371387ab94fd40b76ed6f4b976c33, type: 3}
+  dodgeVoice: {fileID: 8300000, guid: 210b4e168c4bb82478c12d3f69f1b0ec, type: 3}
+  guardVoice: {fileID: 8300000, guid: 88b91f148fe1ffd4fb397eef56c3c98d, type: 3}
+  multiPunchVoice: {fileID: 8300000, guid: eeae57c98728b43409dfc7f578b236e0, type: 3}
   hitStop: {fileID: 1876906042}
 --- !u!95 &1876906040
 Animator:
