@@ -85,6 +85,21 @@ public class PlayerAnimationController : MonoBehaviour
 		animator.SetTrigger("DoIdle");
 	}
 
+	public void PlayThrow()
+	{
+		animator.SetTrigger("DoThrow");
+	}
+
+	public void PlayMultiPunch()
+	{
+		animator.SetTrigger("DoMultiPunch");
+	}
+
+	public void PlayGodJud()
+	{
+		animator.SetTrigger("DoGodJud");
+	}
+
 	public void PlayPunchSound()
 	{
 		audioSource.PlayOneShot(punchSound);
