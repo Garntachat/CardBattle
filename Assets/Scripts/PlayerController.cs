@@ -19,6 +19,8 @@ public class PlayerController : MonoBehaviour
 
     public GameObject DeadEffect;
 
+    public GameObject ShieldBubble;
+
     public Material deadMaterial;
     private Renderer[] rends;
     [Header("UI")]
@@ -32,6 +34,10 @@ public class PlayerController : MonoBehaviour
         rends = GetComponentsInChildren<Renderer>();
     }
 
+    void Update()
+    {
+        DeActivateBubble();
+    }
     // --- damage ---
     public void TakeDamage(float damage)
     {
@@ -69,6 +75,7 @@ public class PlayerController : MonoBehaviour
         damageReduction = reduction;
         animator.SetTrigger("DoBlock");
         Debug.Log($"Guard! Damage reduction: {reduction * 100}%");
+     
     }
 
     public void SetHealAmount(float Amount)
@@ -110,5 +117,18 @@ public class PlayerController : MonoBehaviour
     private void UITakeDamage()
     {
         result.text = $"HP: {currentHP}";
+    }
+
+    private void DeActivateBubble()
+    {
+        if(damageReduction != 0)
+        {
+            ShieldBubble.SetActive(true);
+        }
+        else
+        {
+            ShieldBubble.SetActive(false);
+        }
+        
     }
 }
