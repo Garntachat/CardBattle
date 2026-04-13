@@ -69,7 +69,7 @@ public class EnemyHealth : MonoBehaviour
     {
         yield return new WaitForSecondsRealtime(0.5f);  // delay ก่อน animate — ปรับได้
         if (anim != null) anim.SetTrigger(deathAnimation);
-        yield return new WaitForSecondsRealtime(2f);
+        yield return new WaitForSecondsRealtime(1.9f);
         Destroy(gameObject);
     }
    
