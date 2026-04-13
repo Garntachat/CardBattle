@@ -754,6 +754,13 @@ MonoBehaviour:
   - {fileID: 11400000, guid: d6ac6229a986c4fb6918789b7627230c, type: 2}
   - {fileID: 11400000, guid: f7eac0dd5ef454ebcbb4f4666a38be0d, type: 2}
   - {fileID: 11400000, guid: 88c321f62936445098c379a8ed114a1e, type: 2}
+  - {fileID: 11400000, guid: d6ac6229a986c4fb6918789b7627230c, type: 2}
+  - {fileID: 11400000, guid: d6ac6229a986c4fb6918789b7627230c, type: 2}
+  - {fileID: 11400000, guid: d6ac6229a986c4fb6918789b7627230c, type: 2}
+  - {fileID: 11400000, guid: f7eac0dd5ef454ebcbb4f4666a38be0d, type: 2}
+  - {fileID: 11400000, guid: f7eac0dd5ef454ebcbb4f4666a38be0d, type: 2}
+  - {fileID: 11400000, guid: 88c321f62936445098c379a8ed114a1e, type: 2}
+  - {fileID: 11400000, guid: 88c321f62936445098c379a8ed114a1e, type: 2}
   drawCount: 3
   thinkingRate: {fileID: 1448779993}
 --- !u!4 &264123423
@@ -838,7 +845,7 @@ MonoBehaviour:
   m_fontColor32:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -7378,8 +7385,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4278190080
+  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -16115,7 +16122,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55afae218a5da4287b23343f0e98ec52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerController
-  maxHP: 0
+  maxHP: 100
   currentHP: 0
   slowMoEffect: {fileID: 1448779996}
   hitStop: {fileID: 1876906042}

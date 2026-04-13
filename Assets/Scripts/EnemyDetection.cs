@@ -25,13 +25,13 @@ public class EnemyDetection : MonoBehaviour
             }
         }
 
-        if (!manuallySelected || enemy == null)
-        {
-            if (closest != null)
-            {
-                enemy = closest.transform;
-            }
-        }
+        // if (!manuallySelected || enemy == null)
+        // {
+        //     if (closest != null)
+        //     {
+        //         enemy = closest.transform;
+        //     }
+        // }
 
         bool inRange = closestDist <= detectionRadius;
 
