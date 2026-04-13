@@ -11,6 +11,8 @@ public class CardManager : MonoBehaviour
 
     public ThinkingRate thinkingRate;
     private List<CardData> drawnCards = new List<CardData>();
+    [Header("Card References (Index = Card Type)")]
+    public List<CardData> allCardsReference = new List<CardData>();
 
     private void Shuffle(List<CardData> list)
     {
@@ -24,7 +26,8 @@ public class CardManager : MonoBehaviour
     }
 
     public List<CardData> DrawCards()
-    {
+    {   
+        BuildDeckFromSave(); // ← build deck first
         drawnCards.Clear();
         List<CardData> tempPool = new List<CardData>(allCards);
         Shuffle(tempPool);
@@ -46,4 +49,27 @@ public class CardManager : MonoBehaviour
         thinkingRate.OnCardSelected();
         return selected;
     }
+
+    void BuildDeckFromSave()
+{
+    DeckData data = SaveSystem.LoadDeck();
+
+    if (data == null)
+    {
+        Debug.LogWarning("No saved deck found!");
+        return;
+    }
+
+    allCards.Clear();
+
+    for (int i = 0; i < data.cardAmountStatus.Length; i++)
+    {
+        int amount = data.cardAmountStatus[i];
+
+        for (int j = 0; j < amount; j++)
+        {
+            allCards.Add(allCardsReference[i]); 
+        }
+    }
+}
 }

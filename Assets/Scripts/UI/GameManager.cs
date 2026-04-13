@@ -9,6 +9,8 @@ public class GameManager : MonoBehaviour
 	public int mainMenuSceneIndex = 0;
 	public int stageSelectSceneIndex = 1;
 
+	public int EditDeckSceneIndex = 3;
+
 	public StageData CurrentStage { get; private set; }
 
 	void Awake()
@@ -25,6 +27,11 @@ public class GameManager : MonoBehaviour
 	public void LoadMainMenu()
 	{
 		SceneManager.LoadScene(mainMenuSceneIndex);
+	}
+
+	public void LoadEditDeck()
+	{
+		SceneManager.LoadScene(EditDeckSceneIndex);
 	}
 
 	public void LoadStageSelect()
