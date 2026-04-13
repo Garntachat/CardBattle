@@ -19,6 +19,12 @@ public class PlayerAnimationController : MonoBehaviour
 	// public AudioClip grabSound;
 	public AudioClip slamSound;
 
+	[Header("Voice Lines")]
+	public AudioClip straightPunchVoice;
+	public AudioClip dodgeVoice;
+	public AudioClip guardVoice;
+	public AudioClip multiPunchVoice;
+
     private Animator animator;
 
 	public HitStop hitStop;
@@ -57,14 +63,17 @@ public class PlayerAnimationController : MonoBehaviour
 
 	public void PlayAttack() {
 		animator.SetTrigger("DoAttack");
+		if (straightPunchVoice != null) audioSource.PlayOneShot(straightPunchVoice);
 	}
 
 	public void PlayBlock() {
 		animator.SetTrigger("DoBlock");
+		if (guardVoice != null) audioSource.PlayOneShot(guardVoice);
 	}
 
 	public void PlayDodge() {
 		animator.SetTrigger("DoDodge");
+		if (dodgeVoice != null) audioSource.PlayOneShot(dodgeVoice);
 	}
 
 	public void PlayIdle() {
@@ -85,6 +94,7 @@ public class PlayerAnimationController : MonoBehaviour
 	public void PlayMultiPunch()
 	{
 		animator.SetTrigger("DoMultiPunch");
+		if (multiPunchVoice != null) audioSource.PlayOneShot(multiPunchVoice);
 	}
 
 	public void PlayGodJud()
