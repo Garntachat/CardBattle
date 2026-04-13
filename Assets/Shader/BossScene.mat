@@ -7,9 +7,9 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: BossMat
+  m_Name: BossScene
   m_Shader: {fileID: 4800000, guid: bf7ee83636bd21d4cb877f3bb9340681, type: 3}
-  m_Parent: {fileID: 0}
+  m_Parent: {fileID: 2100000, guid: a0ecf7bd2d521c0488dc94d5d0e63f2e, type: 2}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
   m_InvalidKeywords: []
@@ -24,22 +24,21 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _BaseMap:
-        m_Texture: {fileID: 2800000, guid: 4d7012c0e8bdbc74789a7ea953f2508d, type: 3}
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _OutlineWidth: 0.0015
-    - _RimStep: 0.732
-    - _RimStepSmooth: 0
-    - _ShadowStep: 0.495
-    - _ShadowStepSmooth: 0
-    - _SpecularStep: 0.235
-    - _SpecularStepSmooth: 0
+    - _OutlineWidth: 0.508
+    - _RimStep: 0.757
+    - _RimStepSmooth: 0.502
+    - _ShadowStep: 0.749
+    - _ShadowStepSmooth: 0.52
+    - _SpecularStep: 0
     m_Colors:
-    - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
-    - _OutlineColor: {r: 0, g: 0.015122835, b: 0.26415092, a: 1}
-    - _RimColor: {r: 0, g: 0.020439148, b: 1, a: 1}
-    - _SpecularColor: {r: 0, g: 0.020439148, b: 1, a: 1}
+    - _BaseColor: {r: 0.2519135, g: 0.32812876, b: 0.3490566, a: 1}
+    - _OutlineColor: {r: 0, g: 0.0000063812035, b: 0.29411766, a: 1}
+    - _RimColor: {r: 0, g: 0.051280975, b: 1, a: 1}
+    - _SpecularColor: {r: 0, g: 0.008503914, b: 1, a: 1}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
