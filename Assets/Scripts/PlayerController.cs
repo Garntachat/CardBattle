@@ -72,7 +72,6 @@ public class PlayerController : MonoBehaviour
     // --- 守 Guard ---
     public void SetDamageReduction(float reduction)
     {
-        animator.SetTrigger("DoIdle");
         damageReduction = reduction;
         animator.SetTrigger("DoBlock");
         Debug.Log($"Guard! Damage reduction: {reduction * 100}%");
@@ -81,7 +80,6 @@ public class PlayerController : MonoBehaviour
 
     public void SetHealAmount(float Amount)
     {
-        animator.SetTrigger("DoIdle");
         currentHP+= Amount;
         animator.SetTrigger("DoBlock");
         UITakeDamage();
@@ -90,14 +88,12 @@ public class PlayerController : MonoBehaviour
     // --- 避 Dodge ---
     public void DodgeNextAttack()
     {
-        animator.SetTrigger("DoIdle");
         isDodging = true;
         animator.SetTrigger("DoDodge");
         Debug.Log("Ready to dodge!");
     }
     public void PlayAttackAnimation(string triggerName) 
     {
-        animator.SetTrigger("DoIdle");
         animator.SetTrigger(triggerName);
     }
     // --- ตาย ---

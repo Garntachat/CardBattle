@@ -1753,6 +1753,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CardResolver
   playerController: {fileID: 1876906045}
   enemyDetection: {fileID: 1876906044}
+  animator: {fileID: 1876906040}
 --- !u!4 &526111688
 Transform:
   m_ObjectHideFlags: 0

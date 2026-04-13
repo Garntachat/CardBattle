@@ -6,8 +6,15 @@ public class CardResolver : MonoBehaviour
     public PlayerController playerController;
     public EnemyDetection enemyDetection;
 
+    public Animator animator;
+    void Start()
+    {
+  
+
+    }
     public void ResolveCard(CardData card)
     {   
+        animator.SetTrigger("DoIdle");
         if (enemyDetection.enemy == null)
         {
             Debug.LogWarning("No enemy detected to apply the card to!");
