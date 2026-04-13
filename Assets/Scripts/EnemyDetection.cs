@@ -2,19 +2,16 @@ using UnityEngine;
 
 public class EnemyDetection : MonoBehaviour
 {
-	public float detectionRadius = 5f;
-	public Transform enemy;
+    public float detectionRadius = 5f;
+    public Transform enemy;
+    public ThinkingRate thinkingRate;
+    public bool enemyInRange = false;
+    public bool manuallySelected = false;
+    private Transform lastEnemy = null;
 
-	public ThinkingRate thinkingRate;
-	private bool enemyInRange = false;
-
-	void Start() {
-	}
-
-	void Update() {
-    	Debug.Log("TimeScale: " + Time.timeScale + " EnemyInRange: " + enemyInRange);
-
-		GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
+    void Update() 
+    {
+        GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
         float closestDist = Mathf.Infinity;
         GameObject closest = null;
 
@@ -28,8 +25,13 @@ public class EnemyDetection : MonoBehaviour
             }
         }
 
-        if (closest != null)
-            enemy = closest.transform;
+        // if (!manuallySelected || enemy == null)
+        // {
+        //     if (closest != null)
+        //     {
+        //         enemy = closest.transform;
+        //     }
+        // }
 
         bool inRange = closestDist <= detectionRadius;
 
@@ -43,10 +45,12 @@ public class EnemyDetection : MonoBehaviour
             enemyInRange = false;
             thinkingRate.OnEnemyExitRange();
         }
-	}
+    }
 
-	void OnDrawGizmos() {
-		Gizmos.color = Color.yellow;
-		Gizmos.DrawWireSphere(transform.position, detectionRadius);
-	}
+    void OnDrawGizmos() 
+    {
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawWireSphere(transform.position, detectionRadius);
+    }
 }
+

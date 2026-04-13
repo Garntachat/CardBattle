@@ -1,5 +1,6 @@
 // PlayerController.cs
 using UnityEngine;
+using TMPro;
 
 public class PlayerController : MonoBehaviour
 {
@@ -16,12 +17,27 @@ public class PlayerController : MonoBehaviour
     public SlowmoEffect slowMoEffect;
     public HitStop hitStop;
 
+    public GameObject DeadEffect;
+
+    public GameObject ShieldBubble;
+
+    public Material deadMaterial;
+    private Renderer[] rends;
+    [Header("UI")]
+    public TMP_Text result;
+    public TMP_Text GameOver;
+
     void Start()
     {
         currentHP = maxHP;
         animator = GetComponent<Animator>();
+        rends = GetComponentsInChildren<Renderer>();
     }
 
+    void Update()
+    {
+        DeActivateBubble();
+    }
     // --- damage ---
     public void TakeDamage(float damage)
     {
@@ -38,7 +54,8 @@ public class PlayerController : MonoBehaviour
         currentHP -= finalDamage;
 
         Debug.Log($"Player took {finalDamage} damage! HP: {currentHP}/{maxHP}");
-
+        UITakeDamage();
+        
         // reset reduction after being hit
         damageReduction = 0f;
 
@@ -58,6 +75,14 @@ public class PlayerController : MonoBehaviour
         damageReduction = reduction;
         animator.SetTrigger("DoBlock");
         Debug.Log($"Guard! Damage reduction: {reduction * 100}%");
+     
+    }
+
+    public void SetHealAmount(float Amount)
+    {
+        currentHP+= Amount;
+        animator.SetTrigger("DoBlock");
+        UITakeDamage();
     }
 
     // --- 避 Dodge ---
@@ -75,6 +100,35 @@ public class PlayerController : MonoBehaviour
     private void Die()
     {
         Debug.Log("Player died!");
+        GameOver.gameObject.SetActive(true);
+        Instantiate(DeadEffect, transform.position, Quaternion.identity);
+        if (rends != null && deadMaterial != null)
+        {
+        // change all materials
+        foreach (Renderer r in rends)
+        {
+            r.material = deadMaterial;
+        }
+        }
+
         // บอกทีมให้ trigger game over ตรงนี้
+    }
+
+    private void UITakeDamage()
+    {
+        result.text = $"HP: {currentHP}";
+    }
+
+    private void DeActivateBubble()
+    {
+        if(damageReduction != 0)
+        {
+            ShieldBubble.SetActive(true);
+        }
+        else
+        {
+            ShieldBubble.SetActive(false);
+        }
+        
     }
 }

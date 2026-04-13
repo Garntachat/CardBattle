@@ -27,7 +27,7 @@ public class WaveSpawner : MonoBehaviour
         Debug.Log("Phase 1: Start!");
         for (int i = 0; i < 4; i++)
         {
-            SpawnEnemy(enemyMeleePrefab, i);
+            SpawnEnemy(enemyWeaponPrefab, i);
             yield return new WaitForSeconds(2.0f);
         }
         
@@ -64,7 +64,17 @@ public class WaveSpawner : MonoBehaviour
     {
         if (prefab == null) return;
         int index = spawnPointIndex % spawnPoints.Length;
-        Instantiate(prefab, spawnPoints[index].position, Quaternion.identity);
+        Vector3 spawnPos = spawnPoints[index].position;
+        if (prefab == enemyMeleePrefab)
+        {
+            spawnPos.y = 0.9f;
+        }
+        else
+        {
+            spawnPos.y = 0.0f;
+        }
+        GameObject enemy = Instantiate(prefab, spawnPos, Quaternion.identity);
+        enemy.transform.localScale = new Vector3(1f, 1f, 1f);
     }
 
     bool AllEnemiesDead()

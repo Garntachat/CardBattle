@@ -1,7 +1,7 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &2002939750380036945
-GameObject:
+--- !u!1001 &538539655531798222
+PrefabInstance:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -122,30 +122,52 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2002939750380036945}
+  m_GameObject: {fileID: 844476775846257567}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 14c934a251ff8cc42895cd29e79d02a8, type: 3}
+  m_Script: {fileID: 11500000, guid: 42382ca8e7c56d14c9b7a82118ea4a90, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::EnemyKnife
+  m_EditorClassIdentifier: Assembly-CSharp::Boss
   target: {fileID: 0}
-  speed: 2
-  attackRange: 1.5
+  speed: 3
+  attackRange: 1.7
   attackRate: 2
-  damage: 50
---- !u!114 &7482399959161463134
+  isFarming: 0
+--- !u!95 &1126988154908184417
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 844476775846257567}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 28f1157eb71b8614a9a48dc1458d963c, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &5034269824399896370
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2002939750380036945}
+  m_GameObject: {fileID: 844476775846257567}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 00bdc3ae226b2c64db70340d7509575f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyHealth
-  maxHealth: 1000
+  maxHealth: 100
   isBoss: 1
 --- !u!114 &9066781367584419610
 MonoBehaviour:

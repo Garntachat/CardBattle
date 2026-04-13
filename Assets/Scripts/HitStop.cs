@@ -12,9 +12,10 @@ public class HitStop : MonoBehaviour
 
 	private IEnumerator DoHitStop(float magnitude)
 	{
+		float prevTimeScale = Time.timeScale;  // เก็บค่าเดิมไว้
 		Time.timeScale = 0f;
 		yield return new WaitForSecondsRealtime(stopDuration);
-		Time.timeScale = 1f;
+		Time.timeScale = prevTimeScale;  // restore ค่าเดิม ไม่ใช่ 1f
 		cameraShake.TriggerShake(magnitude);
 	}
 }

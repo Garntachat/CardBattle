@@ -12,6 +12,7 @@ public class ThinkingRate : MonoBehaviour
 
 	public SlowmoEffect slowMoEffect;
 	public SlowMoSound slowMoSound;
+	public EnemyDetection enemyDetection; 
 
 	private float currentGauge;
 	private bool isActive = false;
@@ -79,20 +80,34 @@ public class ThinkingRate : MonoBehaviour
 		currentGauge = 0f;
 		isWaitingForCard = false;
 
+		Time.timeScale = 1f;
+		isActive = false;
+
 		if (slowMoEffect != null) slowMoEffect.OnSlowMoEnd();
 		if (slowMoSound != null) slowMoSound.OnSlowMoEnd();
 
-		Invoke("RestartSlowMo", 1.0f); // to strat slow moton again
+		Invoke("RestartSlowMo", 0.1f); // to strat slow moton again
 
 		
 	}
 
 	void RestartSlowMo()
-    {
-        // Only turn slow-mo back on if the enemy is STILL in the circle
-        if (isActive == true) 
-        {
-            Activate();
-        }
-    }
+	{
+		// เช็คว่ามี enemy ใกล้ player มั้ย
+		GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
+		bool anyInRange = false;
+		
+		foreach (GameObject e in enemies)
+		{
+			float dist = Vector3.Distance(transform.position, e.transform.position);
+			if (dist <= enemyDetection.detectionRadius)  // ตัวเลขเดียวกับ detectionRadius
+			{
+				anyInRange = true;
+				break;
+			}
+		}
+		Debug.Log($"anyInRange: {anyInRange}");
+		if (anyInRange)
+			Activate();
+	}
 }

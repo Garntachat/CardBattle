@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70d24dcb6774f432ab615d41e6fc97e4, type: 3}
+  m_Name: "\u6454_ThrowCard 1"
+  m_EditorClassIdentifier: Assembly-CSharp::CardData
+  chineeseName: "\u6454"
+  pinyin: "Shu\u0101i"
+  thaiName: "\u0E17\u0E38\u0E48\u0E21"
+  englishName: Push
+  cardType: 1
+  cardEffect: 2
+  damage: 90
+  damageReduction: 0
+  Heal: 0
+  pushesEnemyOutOfRange: 1
+  cardArtwork: {fileID: 21300000, guid: 5b55232f27e35444b84ad6597cea8c85, type: 3}
+  cardColor: {r: 0.27058825, g: 0.14509805, b: 0.34117648, a: 1}
+  animationTrigger: DoDodge
+  description: push enemy away

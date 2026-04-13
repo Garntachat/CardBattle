@@ -17,9 +17,10 @@ MonoBehaviour:
   thaiName: "\u0E17\u0E38\u0E48\u0E21"
   englishName: Throw
   cardType: 1
-  cardEffect: 1
-  damage: 20
+  cardEffect: 2
+  damage: 90
   damageReduction: 0
+  Heal: 0
   pushesEnemyOutOfRange: 1
   cardArtwork: {fileID: 21300000, guid: a25a00241de2a49e58b3c86ea3997ebd, type: 3}
   cardColor: {r: 0.27058825, g: 0.14509805, b: 0.34117648, a: 1}

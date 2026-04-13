@@ -9,6 +9,7 @@ public enum CardType
 public enum CardEffect
 {
     StraightStrike,  // 攻
+    ConsecutiveStrike,
     Throw,           // 摔
     Guard
 }
@@ -28,6 +29,7 @@ public class CardData : ScriptableObject
 
     [Header("Defense Effects")]
     public float damageReduction = 0f;  // 守
+    public float Heal = 0f;
 
     [Header("Control Effects")]
     public bool pushesEnemyOutOfRange;  // 摔
