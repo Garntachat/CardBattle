@@ -45,9 +45,31 @@ public class CardResolver : MonoBehaviour
 
             case CardEffect.Guard:
                 playerController.SetDamageReduction(card.damageReduction);
-                Debug.Log($"守 Guard! Reduce damage by {card.damageReduction * 100}%");
+                playerController.SetHealAmount(card.Heal);
+                Debug.Log($"守 Guard! Reduce damage by {card.damageReduction * 100}%heal{card.Heal}");
                 break;
+            case CardEffect.ConsecutiveStrike:
+                GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
 
+                foreach (GameObject enemy in enemies)
+                {
+                    if (!enemy.activeInHierarchy) continue;
+
+                    EnemyHealth eh = enemy.GetComponent<EnemyHealth>();
+
+                    if (eh == null)
+                        eh = enemy.GetComponentInParent<EnemyHealth>();
+                    if (eh == null)
+                        eh = enemy.GetComponentInChildren<EnemyHealth>();
+
+                    if (eh != null)
+                    {
+                        eh.TakeDamage(card.damage, "DoPunched");
+                    }
+                }
+
+                Debug.Log($"攻 Consecutive Strike! Hit all enemies for {card.damage} damage");
+                break;
             default:
                 Debug.Log($"Card {card.englishName} not implemented yet");
                 break;

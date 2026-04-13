@@ -9,6 +9,7 @@ public enum CardType
 public enum CardEffect
 {
     StraightStrike,  // 攻
+    ConsecutiveStrike,
     Throw,           // 摔
     Guard
 }

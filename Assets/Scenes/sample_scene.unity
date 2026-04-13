@@ -751,16 +751,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CardManager
   allCards:
-  - {fileID: 11400000, guid: d6ac6229a986c4fb6918789b7627230c, type: 2}
+  - {fileID: 11400000, guid: 4ef323d3cff03f44fb93c2231b129407, type: 2}
   - {fileID: 11400000, guid: f7eac0dd5ef454ebcbb4f4666a38be0d, type: 2}
   - {fileID: 11400000, guid: 88c321f62936445098c379a8ed114a1e, type: 2}
   - {fileID: 11400000, guid: d6ac6229a986c4fb6918789b7627230c, type: 2}
-  - {fileID: 11400000, guid: d6ac6229a986c4fb6918789b7627230c, type: 2}
-  - {fileID: 11400000, guid: d6ac6229a986c4fb6918789b7627230c, type: 2}
-  - {fileID: 11400000, guid: f7eac0dd5ef454ebcbb4f4666a38be0d, type: 2}
-  - {fileID: 11400000, guid: f7eac0dd5ef454ebcbb4f4666a38be0d, type: 2}
-  - {fileID: 11400000, guid: 88c321f62936445098c379a8ed114a1e, type: 2}
-  - {fileID: 11400000, guid: 88c321f62936445098c379a8ed114a1e, type: 2}
   drawCount: 3
   thinkingRate: {fileID: 1448779993}
 --- !u!4 &264123423
@@ -7376,7 +7370,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'HP: 100/100'
+  m_text: 'HP: 100'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}

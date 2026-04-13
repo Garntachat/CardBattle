@@ -71,6 +71,13 @@ public class PlayerController : MonoBehaviour
         Debug.Log($"Guard! Damage reduction: {reduction * 100}%");
     }
 
+    public void SetHealAmount(float Amount)
+    {
+        currentHP+= Amount;
+        animator.SetTrigger("DoBlock");
+        UITakeDamage();
+    }
+
     // --- 避 Dodge ---
     public void DodgeNextAttack()
     {
@@ -102,6 +109,6 @@ public class PlayerController : MonoBehaviour
 
     private void UITakeDamage()
     {
-        result.text = $"HP: {currentHP}/{maxHP}";
+        result.text = $"HP: {currentHP}";
     }
 }
