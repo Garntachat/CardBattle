@@ -8,10 +8,13 @@ public enum CardType
 
 public enum CardEffect
 {
-    StraightStrike,  // 攻
-    ConsecutiveStrike,
-    Throw,           // 摔
-    Guard
+    StraightStrike = 0,
+    ConsecutiveStrike = 1,
+    Throw = 2,
+    Guard = 3,
+    MultiPunch = 4,
+    Dodge = 5,
+    GodJud = 6
 }
 [CreateAssetMenu(fileName = "NewCard", menuName = "CardGame/Card_Data")]
 public class CardData : ScriptableObject

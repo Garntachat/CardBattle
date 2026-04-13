@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections;
 
 public class EnemyKnife : MonoBehaviour
 {
@@ -8,6 +9,8 @@ public class EnemyKnife : MonoBehaviour
     public float attackRate = 2f;
     private float nextAttackTime = 0f;
     public float damage = 20f; 
+
+    public bool isKnockedDown = false;
 
     // เพิ่มตัวแปรเหล่านี้
     Animator anim;
@@ -23,6 +26,8 @@ public class EnemyKnife : MonoBehaviour
 
     void Update() {
         if (target == null) return;
+
+        if (isKnockedDown) return;
 
         float distance = Vector3.Distance(transform.position, target.position);
 
@@ -45,6 +50,21 @@ public class EnemyKnife : MonoBehaviour
             float currentSpeed = (distance > attackRange) ? speed : 0f;
             anim.SetFloat("Speed", currentSpeed);
         }
+    }
+
+    public void Knockdown(float sleepTime)
+    {
+        StartCoroutine(KnockdownRoutine(sleepTime));
+    }
+
+    private IEnumerator KnockdownRoutine(float sleepTime)
+    {
+        isKnockedDown = true;
+        if (anim != null) anim.SetFloat("Speed", 0f);
+
+        yield return new WaitForSeconds(sleepTime);
+
+        isKnockedDown = false;
     }
 
     void Attack() 

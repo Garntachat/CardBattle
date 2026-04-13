@@ -19,25 +19,17 @@ public class PlayerAnimationController : MonoBehaviour
 	// public AudioClip grabSound;
 	public AudioClip slamSound;
 
+	[Header("Voice Lines")]
+	public AudioClip straightPunchVoice;
+	public AudioClip dodgeVoice;
+	public AudioClip guardVoice;
+	public AudioClip multiPunchVoice;
+
     private Animator animator;
 
 	public HitStop hitStop;
 	void Start() {
 		animator = GetComponent<Animator>();
-	}
-
-	void Update()
-	{
-		if (Input.GetKeyDown(KeyCode.Space))
-		{
-			PlayAttack();
-		} else if (Input.GetKeyDown(KeyCode.B))
-		{
-			PlayBlock();
-		} else if (Input.GetKeyDown(KeyCode.T))
-		{
-			PlayDodge();
-		}
 	}
 
 	public void SpawnPunchEffect()
@@ -71,14 +63,43 @@ public class PlayerAnimationController : MonoBehaviour
 
 	public void PlayAttack() {
 		animator.SetTrigger("DoAttack");
+		if (straightPunchVoice != null) audioSource.PlayOneShot(straightPunchVoice);
 	}
 
 	public void PlayBlock() {
 		animator.SetTrigger("DoBlock");
+		if (guardVoice != null) audioSource.PlayOneShot(guardVoice);
 	}
 
 	public void PlayDodge() {
 		animator.SetTrigger("DoDodge");
+		if (dodgeVoice != null) audioSource.PlayOneShot(dodgeVoice);
+	}
+
+	public void PlayIdle() {
+		animator.ResetTrigger("DoAttack");
+		animator.ResetTrigger("DoThrow");
+		animator.ResetTrigger("DoMultiPunch");
+		animator.ResetTrigger("DoBlock");
+		animator.ResetTrigger("DoDodge");
+		animator.ResetTrigger("DoGodJud");
+		animator.SetTrigger("DoIdle");
+	}
+
+	public void PlayThrow()
+	{
+		animator.SetTrigger("DoThrow");
+	}
+
+	public void PlayMultiPunch()
+	{
+		animator.SetTrigger("DoMultiPunch");
+		if (multiPunchVoice != null) audioSource.PlayOneShot(multiPunchVoice);
+	}
+
+	public void PlayGodJud()
+	{
+		animator.SetTrigger("DoGodJud");
 	}
 
 	public void PlayPunchSound()

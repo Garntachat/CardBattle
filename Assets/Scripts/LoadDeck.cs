@@ -51,12 +51,42 @@ public class LoadDeck : MonoBehaviour
 
     }
 
+    private int GetCurrentTotal()
+    {
+        int total = 0;
+        for (int i = 0; i < Amount.Length; i++)
+        {
+            int val;
+            if (int.TryParse(Amount[i].text, out val))
+            {
+                total += val;
+            }
+        }
+        return total;
+    }
+    
+    private void UpdateTotalUI()
+    {
+        int currentTotal = GetCurrentTotal();
+        info.text = "Total: " + currentTotal + " / 10";
+
+        if (currentTotal == 10) info.color = Color.green;
+        else info.color = Color.white;
+    }
+
 public void Increase(int index)
 {
+    if (GetCurrentTotal() >= 10)
+        {
+            info.text = "Full Deck (Max 10)";
+            info.color = Color.red;
+            return;
+        } 
     int value;
     if (int.TryParse(Amount[index].text, out value))
     {
         Amount[index].text = (value + 1).ToString();
+        UpdateTotalUI();
     }
 }
 
@@ -67,6 +97,7 @@ public void Decrease(int index)
     {
         value = Mathf.Max(0, value - 1); // prevent negative
         Amount[index].text = value.ToString();
+        UpdateTotalUI();
     }
 }
 

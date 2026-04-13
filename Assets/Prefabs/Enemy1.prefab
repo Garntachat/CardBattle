@@ -14,11 +14,11 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 4991a5f32e360ec45b58ae74b3d89a35, type: 2}
     - target: {fileID: -8679921383154817045, guid: a933407860b849240888191631440de1, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a933407860b849240888191631440de1, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a933407860b849240888191631440de1, type: 3}
       propertyPath: m_LocalPosition.z
@@ -112,7 +112,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyKnife
   target: {fileID: 0}
-  speed: 4
+  speed: 1.5
   attackRange: 1.2
   attackRate: 2
   damage: 20

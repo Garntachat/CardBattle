@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using TMPro;
 
 public class WaveSpawner : MonoBehaviour
 {
@@ -10,6 +11,9 @@ public class WaveSpawner : MonoBehaviour
 
     [Header("Spawn Points")]
     public Transform[] spawnPoints; 
+
+    [Header("UI")]
+    public TMP_Text waveText;
 
     void Start()
     {
@@ -23,8 +27,8 @@ public class WaveSpawner : MonoBehaviour
     }
 
     IEnumerator StartLevel1()
-    {
-        Debug.Log("Phase 1: Start!");
+    {   
+        waveText.text = "Phase 1: Start!";
         for (int i = 0; i < 4; i++)
         {
             SpawnEnemy(enemyWeaponPrefab, i);
@@ -32,10 +36,10 @@ public class WaveSpawner : MonoBehaviour
         }
         
         yield return new WaitUntil(() => AllEnemiesDead());
-        Debug.Log("Phase 1 Clear!");
+        waveText.text = "Phase 1 Clear!";
         yield return new WaitForSeconds(2.0f); 
 
-        Debug.Log("Phase 2: Start!");
+        waveText.text = "Phase 2: Start!";
         for (int i = 0; i < 8; i++)
         {
             GameObject selected = (i % 2 == 0) ? enemyMeleePrefab : enemyWeaponPrefab;
@@ -44,20 +48,17 @@ public class WaveSpawner : MonoBehaviour
         }
 
         yield return new WaitUntil(() => AllEnemiesDead());
-        Debug.Log("Phase 2 Clear!");
+        waveText.text = "Phase 2 Clear!";
         yield return new WaitForSeconds(2.0f);
-
-        Debug.Log("Phase 3: BOSS APPEARS!");
-        
+        waveText.text = "Phase 3: BOSS APPEARS!";
         SpawnEnemy(bossPrefab, 0); 
-        
         for (int i = 0; i < 4; i++)
         {
             SpawnEnemy(enemyMeleePrefab, i);
         }
 
         yield return new WaitUntil(() => AllEnemiesDead());
-        Debug.Log("Level 1 Completed! BOSS DEFEATED!");
+        waveText.text = "Level 1 Completed! BOSS DEFEATED!";
     }
 
     void SpawnEnemy(GameObject prefab, int spawnPointIndex)

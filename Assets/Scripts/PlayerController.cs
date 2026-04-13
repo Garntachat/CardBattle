@@ -1,6 +1,7 @@
 // PlayerController.cs
 using UnityEngine;
 using TMPro;
+using System.Collections;
 
 public class PlayerController : MonoBehaviour
 {
@@ -45,7 +46,6 @@ public class PlayerController : MonoBehaviour
         if (isDodging)
         {
             Debug.Log("Dodged!");
-            isDodging = false;
             return;
         }
 
@@ -81,16 +81,29 @@ public class PlayerController : MonoBehaviour
     public void SetHealAmount(float Amount)
     {
         currentHP+= Amount;
-        animator.SetTrigger("DoBlock");
+        if (currentHP > maxHP) currentHP = maxHP;
         UITakeDamage();
+        Debug.Log($"Healed {Amount}. HP: {currentHP}");
     }
 
     // --- 避 Dodge ---
-    public void DodgeNextAttack()
+    public void DodgeNextAttack(float dodgeDuration = 1f)
+    {
+        StartCoroutine(DodgeRoutine(dodgeDuration));
+    }
+
+    private IEnumerator DodgeRoutine(float duration)
     {
         isDodging = true;
         animator.SetTrigger("DoDodge");
-        Debug.Log("Ready to dodge!");
+        Debug.Log("Ready to dodge & Invincible!");
+
+        SetHealAmount(10f);
+
+        yield return new WaitForSeconds(duration);
+
+        isDodging = false;
+        Debug.Log("Dodge ended.");
     }
     public void PlayAttackAnimation(string triggerName) 
     {
