@@ -81,6 +81,10 @@ public class PlayerAnimationController : MonoBehaviour
 		animator.SetTrigger("DoDodge");
 	}
 
+	public void PlayIdle() {
+		animator.SetTrigger("DoIdle");
+	}
+
 	public void PlayPunchSound()
 	{
 		audioSource.PlayOneShot(punchSound);
