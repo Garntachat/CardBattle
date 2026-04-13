@@ -26,20 +26,6 @@ public class PlayerAnimationController : MonoBehaviour
 		animator = GetComponent<Animator>();
 	}
 
-	void Update()
-	{
-		if (Input.GetKeyDown(KeyCode.Space))
-		{
-			PlayAttack();
-		} else if (Input.GetKeyDown(KeyCode.B))
-		{
-			PlayBlock();
-		} else if (Input.GetKeyDown(KeyCode.T))
-		{
-			PlayDodge();
-		}
-	}
-
 	public void SpawnPunchEffect()
 	{
 		Instantiate(punchEffect, grabPoint.position, grabPoint.rotation);
@@ -82,6 +68,12 @@ public class PlayerAnimationController : MonoBehaviour
 	}
 
 	public void PlayIdle() {
+		animator.ResetTrigger("DoAttack");
+		animator.ResetTrigger("DoThrow");
+		animator.ResetTrigger("DoMultiPunch");
+		animator.ResetTrigger("DoBlock");
+		animator.ResetTrigger("DoDodge");
+		animator.ResetTrigger("DoGodJud");
 		animator.SetTrigger("DoIdle");
 	}
 

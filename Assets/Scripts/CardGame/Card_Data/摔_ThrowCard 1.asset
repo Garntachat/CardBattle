@@ -17,12 +17,12 @@ MonoBehaviour:
   thaiName: "\u0E17\u0E38\u0E48\u0E21"
   englishName: Push
   cardType: 1
-  cardEffect: 2
+  cardEffect: 6
   damage: 90
   damageReduction: 0
   Heal: 0
   pushesEnemyOutOfRange: 1
   cardArtwork: {fileID: 21300000, guid: 5b55232f27e35444b84ad6597cea8c85, type: 3}
   cardColor: {r: 0.27058825, g: 0.14509805, b: 0.34117648, a: 1}
-  animationTrigger: DoDodge
+  animationTrigger: DoGodJud
   description: push enemy away

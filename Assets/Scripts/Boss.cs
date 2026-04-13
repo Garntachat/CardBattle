@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections;
 
 public class Boss : MonoBehaviour
 {
@@ -14,6 +15,8 @@ public class Boss : MonoBehaviour
 	private Animator anim;
 	private float nextAttackTime = 0f;
 
+	public bool isKnockedDown = false;
+
 	void Start()
 	{
 		anim = GetComponent<Animator>();
@@ -28,6 +31,8 @@ public class Boss : MonoBehaviour
 	void Update()
 	{
 		if (target == null) return;
+
+		if (isKnockedDown) return;
 
 		if (isFarming)
 		{
@@ -58,6 +63,21 @@ public class Boss : MonoBehaviour
 			MoveToTarget();
 		}
 	}
+
+	public void Knockdown(float sleepTime)
+    {
+        StartCoroutine(KnockdownRoutine(sleepTime));
+    }
+
+    private IEnumerator KnockdownRoutine(float sleepTime)
+    {
+        isKnockedDown = true;
+        if (anim != null) anim.SetFloat("Speed", 0f);
+
+        yield return new WaitForSeconds(sleepTime);
+
+        isKnockedDown = false;
+    }
 
 	void MoveToTarget()
 	{

@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections;
 
 public class EnemyFist : MonoBehaviour
 {
@@ -9,6 +10,8 @@ public class EnemyFist : MonoBehaviour
     private float nextAttackTime = 0f;
     public float damage = 10f;
     private bool hasAttackedThisRound = false;
+
+    public bool isKnockedDown = false;
 
     // เพิ่มตัวแปร Animator
     private Animator anim;
@@ -26,6 +29,7 @@ public class EnemyFist : MonoBehaviour
         EnemyHealth health = GetComponent<EnemyHealth>();
         if (health != null && health.isDead) return; 
         if (target == null) return;
+        if (isKnockedDown) return;
         float distance = Vector3.Distance(transform.position, target.position);
 
         if (distance > attackRange) {
@@ -44,6 +48,21 @@ public class EnemyFist : MonoBehaviour
                 nextAttackTime = Time.unscaledTime + attackRate;
             }
         }
+    }
+
+    public void Knockdown(float sleepTime)
+    {
+        StartCoroutine(KnockdownRoutine(sleepTime));
+    }
+
+    private IEnumerator KnockdownRoutine(float sleepTime)
+    {
+        isKnockedDown = true;
+        if (anim != null) anim.SetFloat("Speed", 0f);
+
+        yield return new WaitForSeconds(sleepTime);
+
+        isKnockedDown = false;
     }
 
     void Attack() 

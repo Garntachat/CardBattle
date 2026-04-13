@@ -16,7 +16,7 @@ public class EnemyHealth : MonoBehaviour
         rends = GetComponentsInChildren<Renderer>();
     }
 
-    public void TakeDamage(float damage, string deathAnimation = "DoDie")
+    public void TakeDamage(float damage, string animationName = "DoDie")
     {   
         if (isDead) return;
         currentHealth -= damage;
@@ -25,7 +25,25 @@ public class EnemyHealth : MonoBehaviour
         if (currentHealth <= 0)
         {
             isDead = true;
-            Die(deathAnimation);
+            Die(animationName);
+        } else
+        {
+            if (animationName != "DoDie" && animationName != "")
+            {
+                Animator anim = GetComponentInChildren<Animator>();
+                if (anim != null) anim.SetTrigger(animationName);
+                if (animationName == "DoPunched")
+                {
+                    EnemyFist fist = GetComponent<EnemyFist>();
+                    if (fist != null) fist.Knockdown(1f);
+
+                    EnemyKnife knife = GetComponent<EnemyKnife>();
+                    if (knife != null) knife.Knockdown(1f);
+
+                    Boss boss = GetComponent<Boss>();
+                    if (boss != null) boss.Knockdown(1f); 
+                }
+            }
         }
     }
     
