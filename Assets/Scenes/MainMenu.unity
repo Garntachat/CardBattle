@@ -1314,7 +1314,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MainMenuController
   btnStart: {fileID: 585930527}
-  btnEndless: {fileID: 1276978095}
+  btnEndless: {fileID: 699402104}
   btnQuit: {fileID: 371702911}
   btnTutorial: {fileID: 816399807}
   btnSelectStage: {fileID: 244011270}
