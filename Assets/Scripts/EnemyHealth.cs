@@ -35,13 +35,13 @@ public class EnemyHealth : MonoBehaviour
                 if (animationName == "DoPunched")
                 {
                     EnemyFist fist = GetComponent<EnemyFist>();
-                    if (fist != null) fist.Knockdown(1f);
+                    if (fist != null) fist.Knockdown(0.5f);
 
                     EnemyKnife knife = GetComponent<EnemyKnife>();
-                    if (knife != null) knife.Knockdown(1f);
+                    if (knife != null) knife.Knockdown(0.5f);
 
                     BossNew bossNew = GetComponent<BossNew>();
-                    if (bossNew != null) bossNew.Knockdown(1f); 
+                    if (bossNew != null) bossNew.Knockdown(0.5f); 
                 }
             }
         }
