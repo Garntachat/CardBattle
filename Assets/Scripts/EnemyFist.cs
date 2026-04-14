@@ -13,6 +13,11 @@ public class EnemyFist : MonoBehaviour
 
     public bool isKnockedDown = false;
 
+    [Header("SoundEffects")]
+    public AudioSource audioSource;
+    public AudioClip hitSound;
+    public AudioClip footStepSound;
+
     // เพิ่มตัวแปร Animator
     private Animator anim;
 
@@ -83,5 +88,15 @@ public class EnemyFist : MonoBehaviour
                 Debug.Log("ศัตรูหมัดต่อยเข้า " + damage);
             }
         }
+    }
+
+    public void PlayHitSound()
+    {
+        audioSource.PlayOneShot(hitSound, 0.3f);
+    }
+
+    public void PlayFootStepSound()
+    {
+        audioSource.PlayOneShot(footStepSound, 0.03f);
     }
 }

@@ -18,12 +18,15 @@ public class PlayerAnimationController : MonoBehaviour
 	// public AudioClip blockSound;
 	// public AudioClip grabSound;
 	public AudioClip slamSound;
+	public AudioClip pushSound;
 
 	[Header("Voice Lines")]
 	public AudioClip straightPunchVoice;
 	public AudioClip dodgeVoice;
 	public AudioClip guardVoice;
 	public AudioClip multiPunchVoice;
+	public AudioClip throwVoice;
+	public AudioClip pushVoice;
 
     private Animator animator;
 
@@ -89,6 +92,7 @@ public class PlayerAnimationController : MonoBehaviour
 	public void PlayThrow()
 	{
 		animator.SetTrigger("DoThrow");
+		if (throwVoice != null) audioSource.PlayOneShot(throwVoice);
 	}
 
 	public void PlayMultiPunch()
@@ -100,6 +104,7 @@ public class PlayerAnimationController : MonoBehaviour
 	public void PlayGodJud()
 	{
 		animator.SetTrigger("DoGodJud");
+		if (pushVoice != null) audioSource.PlayOneShot(pushVoice);
 	}
 
 	public void PlayPunchSound()
@@ -110,5 +115,10 @@ public class PlayerAnimationController : MonoBehaviour
 	public void PlaySlamSound()
 	{
 		audioSource.PlayOneShot(slamSound);
+	}
+
+	public void PlayPushSound()
+	{
+		audioSource.PlayOneShot(pushSound);
 	}
 }
