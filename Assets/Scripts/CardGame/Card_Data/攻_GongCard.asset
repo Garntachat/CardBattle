@@ -18,8 +18,9 @@ MonoBehaviour:
   englishName: Straight Strike
   cardType: 0
   cardEffect: 0
-  damage: 100
+  damage: 99
   damageReduction: 0
+  Heal: 0
   pushesEnemyOutOfRange: 0
   cardArtwork: {fileID: 21300000, guid: f0c1266923d3e44b2acdf3f372e56b76, type: 3}
   cardColor: {r: 0.49803922, g: 0.09019608, b: 0.05490196, a: 1}

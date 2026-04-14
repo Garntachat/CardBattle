@@ -97,7 +97,9 @@ public class CardResolver : MonoBehaviour
                     EnemyHealth eh = enemy.GetComponent<EnemyHealth>();
                     if (eh == null) eh = enemy.GetComponentInParent<EnemyHealth>();
                     if (eh == null) eh = enemy.GetComponentInChildren<EnemyHealth>();
-                    if (eh != null) eh.TakeDamage(pendingCard.damage, "DoPunched");
+                    if (eh != null) {
+                        eh.TakeDamage(pendingCard.damage, "DoPunched");
+                    }
                 }
                 Debug.Log($"攻 Consecutive Strike! Hit all enemies for {pendingCard.damage} damage");
                 break;

@@ -63,6 +63,7 @@ public class EnemyFist : MonoBehaviour
         yield return new WaitForSeconds(sleepTime);
 
         isKnockedDown = false;
+        
     }
 
     void Attack() 

@@ -65,6 +65,7 @@ public class EnemyKnife : MonoBehaviour
         yield return new WaitForSeconds(sleepTime);
 
         isKnockedDown = false;
+        
     }
 
     void Attack() 
