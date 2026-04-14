@@ -34,7 +34,7 @@ public class infiniteSpawner : MonoBehaviour
         while (true)
         {   
             waveText.text = "wave: "+ wave.ToString();
-            for (int i = 0; i < wave*2; i++)
+            for (int i = 0; i < wave; i++)
             {
             GameObject selected = (i % 2 == 0) ? enemyMeleePrefab : enemyWeaponPrefab;
             SpawnEnemy(selected, Random.Range(0, spawnPoints.Length));
