@@ -21,14 +21,20 @@ EditorBuildSettings:
     path: Assets/Scenes/DeckEditer.unity
     guid: 87e332e21399ca548869a225081d4cc7
   - enabled: 1
-    path: Assets/Scenes/Stage2.unity
+    path: Assets/Scenes/Stage2.1.unity
     guid: 3343e81f0e5a7e3449190a76fd348afb
   - enabled: 1
-    path: Assets/Scenes/Stage3.unity
+    path: Assets/Scenes/Stage3.1.unity
     guid: 8a2f3b9ac80d06549bb85e9c87eae4b5
   - enabled: 1
     path: Assets/Scenes/endless.unity
     guid: d62d78ef37ad31b4392827109e58b3c3
+  - enabled: 1
+    path: Assets/Scenes/Stage2.unity
+    guid: d53c824643dcace419ce797e641e6de1
+  - enabled: 1
+    path: Assets/Scenes/Stage3.unity
+    guid: 58ccf24a06f417b4697ae5575a952489
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   m_UseUCBPForAssetBundles: 0
