@@ -33,7 +33,7 @@ public class ThinkingRate : MonoBehaviour
 			if (currentGauge >= maxGauge) 
 				{
 					currentGauge = maxGauge;
-					isWaitingForCard = true;  // เพิ่ม
+					isWaitingForCard = true;
 					OnGaugeFull();
         		}
     	}
@@ -86,21 +86,20 @@ public class ThinkingRate : MonoBehaviour
 		if (slowMoEffect != null) slowMoEffect.OnSlowMoEnd();
 		if (slowMoSound != null) slowMoSound.OnSlowMoEnd();
 
-		Invoke("RestartSlowMo", 0.1f); // to strat slow moton again
+		Invoke("RestartSlowMo", 0.1f); 
 
 		
 	}
 
 	void RestartSlowMo()
 	{
-		// เช็คว่ามี enemy ใกล้ player มั้ย
 		GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
 		bool anyInRange = false;
 		
 		foreach (GameObject e in enemies)
 		{
 			float dist = Vector3.Distance(transform.position, e.transform.position);
-			if (dist <= enemyDetection.detectionRadius)  // ตัวเลขเดียวกับ detectionRadius
+			if (dist <= enemyDetection.detectionRadius)
 			{
 				anyInRange = true;
 				break;

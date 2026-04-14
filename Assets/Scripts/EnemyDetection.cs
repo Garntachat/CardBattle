@@ -24,15 +24,6 @@ public class EnemyDetection : MonoBehaviour
                 closest = e;
             }
         }
-
-        // if (!manuallySelected || enemy == null)
-        // {
-        //     if (closest != null)
-        //     {
-        //         enemy = closest.transform;
-        //     }
-        // }
-
         bool inRange = closestDist <= detectionRadius;
 
         if (inRange && !enemyInRange)

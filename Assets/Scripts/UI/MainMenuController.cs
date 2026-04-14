@@ -5,11 +5,10 @@ public class MainMenuController : MonoBehaviour
 {
     [Header("Buttons")]
     [SerializeField] Button btnStart;
-    [SerializeField] Button btnStageSelect;
+    [SerializeField] Button btnEndless;
     [SerializeField] Button btnQuit;
     [SerializeField] Button btnTutorial; 
     
-    // 1. ADD THE EDIT DECK BUTTON HERE
     [SerializeField] Button btnEditDeck; 
 
     [Header("Title Animation")]
@@ -21,7 +20,6 @@ public class MainMenuController : MonoBehaviour
     [SerializeField] StageData firstStage;
 
     [Header("Scene Settings")]
-    // Put the Build Settings number for your Card Deck scene here!
     [SerializeField] int cardDeckSceneIndex = 3; 
 
     Vector3 titleStartPos;
@@ -32,15 +30,13 @@ public class MainMenuController : MonoBehaviour
             titleStartPos = titleTransform.anchoredPosition;
 
         btnStart.onClick.AddListener(OnStartClicked);
-        btnStageSelect.onClick.AddListener(OnStageSelectedClicked);
+        btnEndless.onClick.AddListener(OnEndlessClicked);
         btnQuit.onClick.AddListener(OnQuitClicked);
         
         if (btnTutorial != null) 
         {
             btnTutorial.onClick.AddListener(OnTutorialClicked);
         }
-
-        // 2. TELL THE EDIT DECK BUTTON TO LISTEN FOR CLICKS
         if (btnEditDeck != null)
         {
             btnEditDeck.onClick.AddListener(OnEditDeckClicked);
@@ -75,12 +71,11 @@ public class MainMenuController : MonoBehaviour
         SceneTransition.Instance.TransitionTo(1); 
     }
 
-    void OnStageSelectedClicked()
+    void OnEndlessClicked()
     {
-        SceneTransition.Instance.TransitionTo(2);
+        SceneTransition.Instance.TransitionTo(7);
     }
-
-    // 3. THIS LOADS YOUR CARD DECK SCENE!
+	
     void OnEditDeckClicked()
     {
         Debug.Log("Going to Edit Deck Scene!");

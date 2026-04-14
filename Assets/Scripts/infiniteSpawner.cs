@@ -40,7 +40,7 @@ public class infiniteSpawner : MonoBehaviour
             SpawnEnemy(selected, Random.Range(0, spawnPoints.Length));
             yield return new WaitForSeconds(spawnRate);
             }
-            if (wave % 5 == 0)
+            if (wave % 4 == 0)
         {
             SpawnEnemy(bossPrefab, Random.Range(0, spawnPoints.Length));
         }
