@@ -8,6 +8,7 @@ public class MainMenuController : MonoBehaviour
     [SerializeField] Button btnEndless;
     [SerializeField] Button btnQuit;
     [SerializeField] Button btnTutorial; 
+	[SerializeField] Button btnSelectStage;
     
     [SerializeField] Button btnEditDeck; 
 
@@ -32,6 +33,7 @@ public class MainMenuController : MonoBehaviour
         btnStart.onClick.AddListener(OnStartClicked);
         btnEndless.onClick.AddListener(OnEndlessClicked);
         btnQuit.onClick.AddListener(OnQuitClicked);
+		btnSelectStage.onClick.AddListener(OnStageSelect);
         
         if (btnTutorial != null) 
         {
@@ -75,7 +77,11 @@ public class MainMenuController : MonoBehaviour
     {
         SceneTransition.Instance.TransitionTo(7);
     }
-	
+	void OnStageSelect()
+    {
+        SceneTransition.Instance.TransitionTo(2); 
+    }
+
     void OnEditDeckClicked()
     {
         Debug.Log("Going to Edit Deck Scene!");

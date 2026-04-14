@@ -36,7 +36,7 @@ public class EnemyHealth : MonoBehaviour
                 if (anim != null) anim.SetTrigger(animationName);
                 if (animationName == "DoPunched")
                 {
-                    EnemyFist fist = GetComponent<EnemyFist>();
+                    EnemyFist fist = GetComponentInChildren<EnemyFist>();
                     if (fist != null) fist.Knockdown(0.5f);
 
                     EnemyKnife knife = GetComponent<EnemyKnife>();
@@ -53,7 +53,7 @@ public class EnemyHealth : MonoBehaviour
     {
         isDead = true;
         
-        EnemyFist fist = GetComponent<EnemyFist>();
+        EnemyFist fist = GetComponentInChildren<EnemyFist>();
         if (fist != null) fist.enabled = false;
         EnemyKnife knife = GetComponent<EnemyKnife>();
         if (knife != null) knife.enabled = false;

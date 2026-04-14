@@ -15,6 +15,10 @@ public class BossNew : MonoBehaviour
     private float nextAttackTime = 0f;
     public float damage = 20f;
 
+    [Header("Sound")]
+    public AudioSource audioSource;
+    public AudioClip floatSound;
+
     private Animator anim;
     private Rigidbody rb;
 
@@ -30,6 +34,7 @@ public class BossNew : MonoBehaviour
 
         if (anim == null)
             Debug.LogWarning("Animator not found on Boss!");
+
     }
 
     void Update()
@@ -58,6 +63,7 @@ public class BossNew : MonoBehaviour
                 transform.position.y,
                 target.position.z
             ));
+
         }
 
         // --- ANIMATION (Speed) ---
@@ -102,5 +108,10 @@ public class BossNew : MonoBehaviour
                 Debug.Log("Boss hit player for " + damage);
             }
         }
+    }
+
+    void PlayFloatSOund()
+    {
+        audioSource.PlayOneShot(floatSound, 0.02f);
     }
 }

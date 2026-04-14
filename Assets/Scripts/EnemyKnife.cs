@@ -12,6 +12,11 @@ public class EnemyKnife : MonoBehaviour
 
     public bool isKnockedDown = false;
 
+    [Header("SoundEffects")]
+    public AudioSource audioSource;
+    public AudioClip stabSound;
+    public AudioClip footStepSound;
+
     // เพิ่มตัวแปรเหล่านี้
     Animator anim;
     Rigidbody rb;
@@ -85,5 +90,15 @@ public class EnemyKnife : MonoBehaviour
                 Debug.Log("ศัตรูมีดฟันเข้า " + damage);
             }
         }
+    }
+
+    public void PlayStabSound()
+    {
+        audioSource.PlayOneShot(stabSound, 0.3f);
+    }
+
+    public void PlayFootStepSound()
+    {
+        audioSource.PlayOneShot(footStepSound, 0.03f);
     }
 }

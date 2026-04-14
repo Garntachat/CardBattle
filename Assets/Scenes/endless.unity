@@ -1112,7 +1112,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: GAME OVER
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 1b10f0e8dab1c4d16be0e3da50e91dd4, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -1143,7 +1143,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 1
+  m_fontStyle: 0
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -1179,7 +1179,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &285894043
@@ -1264,7 +1264,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'BOSS: 100/100'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 1b10f0e8dab1c4d16be0e3da50e91dd4, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -1331,7 +1331,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &309771470
@@ -75176,7 +75176,7 @@ MonoBehaviour:
   - {fileID: 849593199}
   - {fileID: 127950369}
   - {fileID: 994541350}
-  spawnRate: 0.2
+  spawnRate: 0.3
   waveText: {fileID: 1279079431}
 --- !u!1 &1703382184 stripped
 GameObject:
@@ -78083,10 +78083,13 @@ MonoBehaviour:
   audioSource: {fileID: 1876906047}
   punchSound: {fileID: 8300000, guid: c40b7e16f26b7c34f8581b588967026a, type: 3}
   slamSound: {fileID: 8300000, guid: 0cad1fcf08a637140a8c90265ec2dcb2, type: 3}
+  pushSound: {fileID: 0}
   straightPunchVoice: {fileID: 8300000, guid: 883371387ab94fd40b76ed6f4b976c33, type: 3}
   dodgeVoice: {fileID: 8300000, guid: 210b4e168c4bb82478c12d3f69f1b0ec, type: 3}
   guardVoice: {fileID: 8300000, guid: 88b91f148fe1ffd4fb397eef56c3c98d, type: 3}
   multiPunchVoice: {fileID: 8300000, guid: eeae57c98728b43409dfc7f578b236e0, type: 3}
+  throwVoice: {fileID: 0}
+  pushVoice: {fileID: 0}
   hitStop: {fileID: 1876906042}
 --- !u!95 &1876906040
 Animator:
