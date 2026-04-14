@@ -116,6 +116,7 @@ MonoBehaviour:
   attackRange: 1.2
   attackRate: 2
   damage: 20
+  isKnockedDown: 0
 --- !u!114 &4836709166025800829
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -143,7 +144,7 @@ Animator:
   m_GameObject: {fileID: 2100546672019997253}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: c1c4b18761e8fee4b9b71f2d37c623dc, type: 2}
+  m_Controller: {fileID: 9100000, guid: da3272c3c5f8c204fa76771d34509623, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
