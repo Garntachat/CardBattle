@@ -9,6 +9,8 @@ public class EnemyHealth : MonoBehaviour
 
     public Material normalMaterial;
     public Material damageMaterial;
+
+    public GameObject hurtEffect;
     private Renderer[] rends;
     void Start()
     {
@@ -35,13 +37,13 @@ public class EnemyHealth : MonoBehaviour
                 if (animationName == "DoPunched")
                 {
                     EnemyFist fist = GetComponent<EnemyFist>();
-                    if (fist != null) fist.Knockdown(1f);
+                    if (fist != null) fist.Knockdown(0.5f);
 
                     EnemyKnife knife = GetComponent<EnemyKnife>();
-                    if (knife != null) knife.Knockdown(1f);
+                    if (knife != null) knife.Knockdown(0.5f);
 
                     BossNew bossNew = GetComponent<BossNew>();
-                    if (bossNew != null) bossNew.Knockdown(1f); 
+                    if (bossNew != null) bossNew.Knockdown(0.5f); 
                 }
             }
         }
@@ -82,6 +84,7 @@ public class EnemyHealth : MonoBehaviour
         foreach (Renderer r in rends)
         {
             r.material = damageMaterial;
+            Instantiate(hurtEffect, transform.position, transform.rotation);
         }
 
         yield return new WaitForSeconds(0.1f);

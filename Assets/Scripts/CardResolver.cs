@@ -85,7 +85,7 @@ public class CardResolver : MonoBehaviour
                 break;
 
             case CardEffect.Throw:
-                enemyHealth.TakeDamage(pendingCard.damage, "DoThrown");
+                enemyHealth.TakeDamage(pendingCard.damage, "DoPunched");
                 Debug.Log("摔 Throw! Enemy pushed out of range");
                 break;
 
@@ -97,7 +97,9 @@ public class CardResolver : MonoBehaviour
                     EnemyHealth eh = enemy.GetComponent<EnemyHealth>();
                     if (eh == null) eh = enemy.GetComponentInParent<EnemyHealth>();
                     if (eh == null) eh = enemy.GetComponentInChildren<EnemyHealth>();
-                    if (eh != null) eh.TakeDamage(pendingCard.damage, "DoPunched");
+                    if (eh != null) {
+                        eh.TakeDamage(pendingCard.damage, "DoPunched");
+                    }
                 }
                 Debug.Log($"攻 Consecutive Strike! Hit all enemies for {pendingCard.damage} damage");
                 break;
