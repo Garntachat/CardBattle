@@ -25,7 +25,7 @@ public class PlayerController : MonoBehaviour
     public Material deadMaterial;
     private Renderer[] rends;
     [Header("UI")]
-    public TMP_Text result;
+    public UnityEngine.UI.Slider hpBar;
     public TMP_Text GameOver;
 
     void Start()
@@ -33,6 +33,8 @@ public class PlayerController : MonoBehaviour
         currentHP = maxHP;
         animator = GetComponent<Animator>();
         rends = GetComponentsInChildren<Renderer>();
+        hpBar.maxValue = maxHP;
+        hpBar.value = currentHP;
     }
 
     void Update()
@@ -129,7 +131,7 @@ public class PlayerController : MonoBehaviour
 
     private void UITakeDamage()
     {
-        result.text = $"HP: {currentHP}";
+        hpBar.value = currentHP;
     }
 
     private void DeActivateBubble()
