@@ -982,6 +982,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::StageSelectController
   stages:
   - {fileID: 11400000, guid: 8e550e23f6450b940b42bd08e437fbc6, type: 2}
+  - {fileID: 11400000, guid: 739f3694fc5978f4c954f3a2dddbb700, type: 2}
+  - {fileID: 11400000, guid: c0fc2d9183d3d2f4ab85e6eb9f1e9a36, type: 2}
   stageGridParent: {fileID: 1711540870}
   stageCardPrefab: {fileID: 5121611565405375247, guid: 393659ed310d52146861a795c903ddc0, type: 3}
   infoPanel: {fileID: 1011654011}

@@ -92,6 +92,10 @@ PrefabInstance:
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: a0ecf7bd2d521c0488dc94d5d0e63f2e, type: 2}
+    - target: {fileID: 9013638940889411661, guid: a2933be9c75bd1841a02b7fa40c8ca67, type: 3}
+      propertyPath: m_TagString
+      value: Boss
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -145,7 +149,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00bdc3ae226b2c64db70340d7509575f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyHealth
-  maxHealth: 100
+  maxHealth: 300
   isBoss: 1
   isDead: 0
   normalMaterial: {fileID: 2100000, guid: a0ecf7bd2d521c0488dc94d5d0e63f2e, type: 2}
@@ -166,5 +170,5 @@ MonoBehaviour:
   speed: 4
   attackRange: 2.5
   attackRate: 2
-  damage: 20
+  damage: 30
   isKnockedDown: 0

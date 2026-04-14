@@ -132,6 +132,7 @@ MonoBehaviour:
   attackRange: 1.5
   attackRate: 1
   damage: 5
+  isKnockedDown: 0
 --- !u!114 &7111842291234274047
 MonoBehaviour:
   m_ObjectHideFlags: 0

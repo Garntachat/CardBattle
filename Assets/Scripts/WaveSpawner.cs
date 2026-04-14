@@ -14,6 +14,7 @@ public class WaveSpawner : MonoBehaviour
 
     [Header("UI")]
     public TMP_Text waveText;
+
     void Start()
     {
         if (enemyMeleePrefab == null || enemyWeaponPrefab == null || bossPrefab == null || spawnPoints.Length == 0)
@@ -51,7 +52,6 @@ public class WaveSpawner : MonoBehaviour
         yield return new WaitForSeconds(2.0f);
         waveText.text = "Phase 3: BOSS APPEARS!";
         SpawnEnemy(bossPrefab, 0); 
-        
         for (int i = 0; i < 4; i++)
         {
             SpawnEnemy(enemyMeleePrefab, i);
