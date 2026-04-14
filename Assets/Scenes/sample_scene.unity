@@ -1195,6 +1195,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -1085274668693059654, guid: c08db4422e2820742b8e3b88c2112eed, type: 3}
   m_PrefabInstance: {fileID: 1876906037}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &308277697 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 119512, guid: 5578b82f17c954843901e8b68ca21dcc, type: 3}
+  m_PrefabInstance: {fileID: 956707951}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &308277698 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 451560, guid: 5578b82f17c954843901e8b68ca21dcc, type: 3}
@@ -8269,6 +8274,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a0365f9a58dc4c458c85da01b15cebc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LoadScene
+--- !u!1 &1117225613 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 108756, guid: 2d521608fcf07c346b5e2ed4049aa717, type: 3}
+  m_PrefabInstance: {fileID: 1020732314}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1117225614 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 489978, guid: 2d521608fcf07c346b5e2ed4049aa717, type: 3}
@@ -78294,9 +78304,9 @@ MonoBehaviour:
   - {fileID: 634641081}
   - {fileID: 1703382184}
   - {fileID: 766534259}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 177757433}
+  - {fileID: 308277697}
+  - {fileID: 1117225613}
+  - {fileID: 634641081}
 --- !u!1 &1933312259
 GameObject:
   m_ObjectHideFlags: 0

@@ -85,7 +85,7 @@ public class CardResolver : MonoBehaviour
                 break;
 
             case CardEffect.Throw:
-                enemyHealth.TakeDamage(pendingCard.damage, "DoThrown");
+                enemyHealth.TakeDamage(pendingCard.damage, "DoPunched");
                 Debug.Log("摔 Throw! Enemy pushed out of range");
                 break;
 
