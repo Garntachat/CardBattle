@@ -5,7 +5,7 @@ public class MainMenuController : MonoBehaviour
 {
     [Header("Buttons")]
     [SerializeField] Button btnStart;
-    [SerializeField] Button btnStageSelect;
+    [SerializeField] Button btnEndless;
     [SerializeField] Button btnQuit;
     [SerializeField] Button btnTutorial; 
     
@@ -32,7 +32,7 @@ public class MainMenuController : MonoBehaviour
             titleStartPos = titleTransform.anchoredPosition;
 
         btnStart.onClick.AddListener(OnStartClicked);
-        btnStageSelect.onClick.AddListener(OnStageSelectedClicked);
+        btnEndless.onClick.AddListener(OnEndlessClicked);
         btnQuit.onClick.AddListener(OnQuitClicked);
         
         if (btnTutorial != null) 
@@ -75,9 +75,9 @@ public class MainMenuController : MonoBehaviour
         SceneTransition.Instance.TransitionTo(1); 
     }
 
-    void OnStageSelectedClicked()
+    void OnEndlessClicked()
     {
-        SceneTransition.Instance.TransitionTo(2);
+        SceneTransition.Instance.TransitionTo(7);
     }
 
     // 3. THIS LOADS YOUR CARD DECK SCENE!
