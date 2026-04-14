@@ -9,6 +9,8 @@ public class EnemyHealth : MonoBehaviour
 
     public Material normalMaterial;
     public Material damageMaterial;
+
+    public GameObject hurtEffect;
     private Renderer[] rends;
     void Start()
     {
@@ -82,6 +84,7 @@ public class EnemyHealth : MonoBehaviour
         foreach (Renderer r in rends)
         {
             r.material = damageMaterial;
+            Instantiate(hurtEffect, transform.position, transform.rotation);
         }
 
         yield return new WaitForSeconds(0.1f);

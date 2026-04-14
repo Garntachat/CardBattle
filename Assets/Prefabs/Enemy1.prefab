@@ -112,7 +112,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyKnife
   target: {fileID: 0}
-  speed: 1.5
+  speed: 2
   attackRange: 1.2
   attackRate: 2
   damage: 20
@@ -134,6 +134,7 @@ MonoBehaviour:
   isDead: 0
   normalMaterial: {fileID: 2100000, guid: 4991a5f32e360ec45b58ae74b3d89a35, type: 2}
   damageMaterial: {fileID: 2100000, guid: 4f788bdfaded6d54eacdc5c2726b87d7, type: 2}
+  hurtEffect: {fileID: 5574689692843851947, guid: 38d70e215bb401c45b51a9028fc78bc1, type: 3}
 --- !u!95 &7185922908401241340
 Animator:
   serializedVersion: 7

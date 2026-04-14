@@ -150,6 +150,7 @@ MonoBehaviour:
   isDead: 0
   normalMaterial: {fileID: 2100000, guid: bed5c05aa7bf1bf4f8f37c488333ddcb, type: 2}
   damageMaterial: {fileID: 2100000, guid: 4f788bdfaded6d54eacdc5c2726b87d7, type: 2}
+  hurtEffect: {fileID: 5574689692843851947, guid: 38d70e215bb401c45b51a9028fc78bc1, type: 3}
 --- !u!1 &6425191143988873484
 GameObject:
   m_ObjectHideFlags: 0

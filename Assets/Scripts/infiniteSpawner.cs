@@ -12,7 +12,7 @@ public class infiniteSpawner : MonoBehaviour
     [Header("Spawn Points")]
     public Transform[] spawnPoints; 
 
-    public float spawnRate = 0.6f;
+    public float spawnRate = 0.2f;
     [Header("UI")]
     public TMP_Text waveText; 
 
@@ -40,6 +40,10 @@ public class infiniteSpawner : MonoBehaviour
             SpawnEnemy(selected, Random.Range(0, spawnPoints.Length));
             yield return new WaitForSeconds(spawnRate);
             }
+            if (wave % 5 == 0)
+        {
+            SpawnEnemy(bossPrefab, Random.Range(0, spawnPoints.Length));
+        }
             yield return new WaitUntil(() => AllEnemiesDead());
             wave +=1;
             
